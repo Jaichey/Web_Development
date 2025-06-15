@@ -43,3 +43,9 @@ logs/
 *.swp
 *.swo
 *.gif
+package-lock.json
+yarn.lock
+*.lock
+*.DS_Store
+package.json
+*.env
