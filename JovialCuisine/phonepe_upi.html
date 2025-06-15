@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonePe</title>
+    <style>
+        form{
+            display: flex;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 5px rgba(58, 57, 57, 0.164);
+            flex-direction: column;
+            width: 40vw;
+            margin-left: 30%;
+            margin-top: 10%;
+            
+
+        }
+        .upi-logo{
+            display: flex;
+            justify-content: end;
+        }
+        .to-send{
+            display: flex;
+            justify-content: space-between;
+        }
+        .upi-pin{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            justify-content: center;
+            margin-left: 30%;
+        }
+        .upi-pin input{
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            width: 2vw;
+        }
+        .num-pad{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-top: 30%;
+            margin-right: 30%;
+            
+        }
+        .num-pad a{
+            text-decoration: none;
+            padding: 10%;
+        }
+        .frow,.srow,.row{
+            margin-bottom: 10%;
+        }
+        .frow a:hover,.srow a:hover,.row a:hover{
+            background-color :rgba(128, 128, 128, 0.384);
+        }
+        .lrow{
+            margin-left: 10%;
+            margin-bottom: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="ouline">
+        <form action="order.html">
+            <div class="upi-logo">
+                <img src="UPI-Logo-vector.svg.png" alt="upi logo" height="40px" width="80px">
+            </div>
+            <div class="to-send">
+                <div class="to">
+                    <p>To</p>
+                    <p>Sending</p>
+                </div>
+                <div class="send">
+                    <p>jovialcuisine@paytm</p>
+                    <p><b>&#8377;150</b></p>
+                </div>
+            </div>
+            <div class="upi-pin">
+                <p style="margin-left: 3.5%;">ENTER 6-DIGIT UPI PIN</p>
+                <div class="pin">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+                <div class="num-pad">
+                    <div class="frow">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                    </div>
+                    <div class="srow">
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                    </div>
+                    <div class="row">
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                    </div>
+                    <div class="lrow">
+                        <img src="backspace-arrow.png" alt="image of backspace" height="30px" width="30px">
+                        <a href="#">0</a>
+                        <a href="order.html"><img src="check.png" alt="image of backspace" height="30px" width="30px"></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

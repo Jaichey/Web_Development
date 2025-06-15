@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+}
+.orrr{
+    border: 2px double rgb(255, 255, 255,0.5);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px double rgb(255, 255, 255,0.5);
+    font-family: "Ramaraja",serif,sans-serif;
+    font-weight: 400;
+
+}
+.logo span{
+color: blue;
+font-size: 56px;
+}
+.logo h1{
+grid-row: 1/2;
+grid-column: 2/3;
+justify-content: center;
+}
+
+body{
+    background-image: url("bg-foog.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+.Order_data{
+    display: flex;
+    height: 79vh;
+    padding-top: 5%;
+}
+.box{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px;
+    background-color: #fff;
+    height: 55vh;
+    width: 37vw;
+    border-radius: 25px;
+    padding: 2%;
+    margin-top: 16%;
+    margin: 2%;
+    margin-left: 30%;
+
+}
+.child1{
+    display: flex;
+    flex-direction: column;
+}
+.trackk{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+.trackk a{
+    text-decoration: none;
+    font-size: 110%;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+.trackk a:hover{
+    color: black;
+    cursor: pointer;
+}
+.child1 p{
+    padding-bottom: 2%;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0,0.6);
+}
+.child1 p span{
+    color: black;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+}
+.center p{
+    padding-bottom: 2%;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+.center p span{
+    color: rgb(0, 0, 0,0.6);
+}
+.child1 a{
+    text-decoration: none;
+    position: absolute;
+    left: 65%;
+    top: -2.5rem;
+}
+.image{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+.image img{
+    box-sizing: border-box;
+    margin-top: -60%;
+}
+.order-ship{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+.order-ship #hrr{
+    border: 1px solid;
+}
+#hrr2{
+    border: 1px dashed;
+}
+#img1{
+    border: 4px solid blue;
+    border-radius: 50%;
+    padding: 1%;
+}
+
+#img2{
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 2%;
+}
+.footer{
+    display: flex;
+    font-size: 15px;
+    color: white;
+    padding: 2% 5%;
+    background-color: black;
+    justify-content: space-evenly;
+    margin-top: 4.6vh;
+    align-items: center;
+   
+
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+.footer a:hover{
+        color: yellow;
+}
+.rights{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1.3%;
+}
+iframe{
+    border-radius: 5px;
+}
+.done{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: #fff;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    font-size: 30px;
+    animation: fade 3s ease-out forwards;
+    top: 0%;
+}
+
+@keyframes fade{
+    100%{
+        opacity: 0;
+        height: 0;
+    }
+    
+    
+}

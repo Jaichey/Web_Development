@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonePe</title>
+    <style>
+        *{
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+        .acout{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .select-ac{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px;
+            width: 40vw;
+            margin-top: 5%;
+            border-radius: 5px;
+            
+        }
+        .sbi,.Union,.HDFC,.ICICI,.Kotak{
+            display: flex;
+            box-sizing: border-box;
+            justify-content: space-between;
+            font-size: 18px;
+        }
+        .sbi p,.Union p,.HDFC p,.ICICI p,.Kotak p{
+            margin-right: 15%;
+        }
+        .sbi img,.Union img,.HDFC img,.ICICI img,.Kotak img{
+            margin-left: 15%;
+            margin-top: 2%;
+        }
+        .conti-cancle{
+            display: flex;
+            align-items: center;
+            padding: 3%;
+            font-size: x-large;
+        }
+        .conti-cancle a{
+            text-decoration: none;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="acout">
+        <div class="select-ac">
+            <p style="font-size: 30px; padding-top: 5%; padding-left: 5%;">Transfer from</p>
+        <div class="sbi">
+            <img src="sbi.png" alt="Sbi Logo" height="25" width="25">
+            <p>State Bank of India -1234</p>
+            <input type="radio" name="pay" style="margin-right: 10%;">
+        </div>
+        <hr style="border: 0.1px line rgba(128, 128, 128, 0.486); width: 25vw; margin-top: -2%; margin-right: 12%;">
+        <div class="Union">
+            <img src="union.png" alt="Union Logo" height="25" width="25">
+            <p>Union Bank of India-5678</p>
+            <input type="radio" name="pay" style="margin-right: 10%;">
+        </div>
+        <hr style="border: 0.1px line rgba(128, 128, 128, 0.486); width: 25vw; margin-top: -2%; margin-right: 12%;">
+        <div class="HDFC">
+            <img src="hdfc.png" alt="HDFC Logo" height="25" width="25">
+            <p style="margin-left: -10.3%;">HDFC Bank-9101</p>
+            <input type="radio" name="pay" style="margin-right: 10%;">
+        </div>
+        <hr style="border: 0.1px line rgba(128, 128, 128, 0.486); width: 25vw; margin-top: -2%; margin-right: 12%;">
+        <div class="ICICI">
+            <img src="icici.png" alt="ICICI Logo" height="25" width="25">
+            <p style="margin-left: -11.3%;">ICICI Bank-1213</p>
+            <input type="radio" name="pay" style="margin-right: 10%;">
+        </div>
+        <hr style="border: 0.1px line rgba(128, 128, 128, 0.486); width: 25vw; margin-top: -2%; margin-right: 12%;">
+        <div class="Kotak">
+            <img src="kotak.png" alt="Kotak Logo" height="25" width="25">
+            <p>Kotak Mahindra Bank-1415</p>
+            <input type="radio" name="pay" style="margin-right: 10%;">
+        </div>
+        <hr style="border: 0.1px line rgba(128, 128, 128, 0.486); width: 25vw; margin-top: -2%; margin-right: 12%;">
+        <div class="conti-cancle">
+            <a href="cancle.html">Cancle</a>
+            <a href="phonepe_upi.html">Continue</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

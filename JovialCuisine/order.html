@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ramaraja&display=swap" rel="stylesheet">
+<script>
+        function displayDateTime() {
+            var now = new Date();
+            //let price = ;
+            var dateTime = now.toLocaleString();
+            document.getElementById("day").innerHTML = dateTime;
+        }
+        window.onload = displayDateTime;
+        const value = sessionStorage.getItem('storedValue');
+        document.getElementById('price-out').innerText=value ? value:"no value stored";
+</script>
+</head>
+<body>
+    <div class="orrr">
+    <div class="logo">
+        <h1><span>J</span>ovial <span>C</span>uisine</h1>
+    </div>
+    <form action="#" class="Order_data">
+        <div class="box">
+            <div class="child1">
+                <p>Order Id: <span>#001156</span></p>
+                <p>Placed On <span id="day"></span></p>
+                <p><a href="#">View Details</a></p>
+                <hr width="450px">
+            </div>
+            <div class="child2">
+                <div class="center">
+                    <p style="color: black; padding-top: 2%; font-size: 25px;">Your Item</p>
+                    <p>Qty:<span>1 Item</span></p>
+                    <p style="font-size: x-large;" id="price-out">&#8377; 150/- <span>via(COD)</span></p>
+                    <p><span>Tracking Status on:</span> 11:11 am,Today</p>
+                    <div class="order-ship">
+                        <img id="img1" src="check-out (1).png" alt="" height="48px" width="48px">
+                        <hr id="hrr" style="color: blue;" width="50px">
+                        <img id="img1" src="truck.png" alt="" height="50px" width="50px">
+                        <hr id="hrr2" width="50px">
+                        <img id="img2" src="order-fulfillment.png" alt=""height="50px" width="50px">
+                    </div>
+                </div>
+                <hr style="margin-top: 1%;">
+                <div class="trackk">
+                    <a href="cancle.html">Cancel</a>
+                    <a href="track.html">Track</a>
+                </div>
+            <div class="image">
+                <img src="food.png" alt="" height="150px" width="150px">
+            </div>
+            </div>
+        </div>
+        </div>
+    </form>
+</div>
+<div class="done">
+    <div class="inside">
+        <img src="check-mark.png" alt="done image" height="250px" width="250px">
+        <p style="margin-left: 10%;">Order Placed</p>
+    </div>
+</div>
+<div class="footer">
+    <div class="maps">
+        <iframe style="margin-left: -25%;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.280583711755!2d78.48895010982362!3d17.398317283421846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb994eb916836f%3A0x2e380eae1d62caa6!2sSRVR%20BOYS%20HOSTEL!5e0!3m2!1sen!2sin!4v1725647165343!5m2!1sen!2sin" 
+            width="250" height="75" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="address" style="margin-left: -8%; margin-right: -5%;">
+        <p>#H-NO-3-54 Narayanaguda <br> 
+           Hyderabad <br>
+           Telangana <br>
+           507120</p>
+    </div>
+    <div class="rights">
+        <p><a href="terms.html">Terms and Conditions</a></p>
+        <p><a href="privacy.html">Privacy policy</a></p>
+        <p>&copy;All Rights Reserved #JaiChey</p>
+    </div>
+    <div class="social">
+           <div class="fb">
+                <img src="facebook.png" alt="" height="30px" width="30px">
+                <a href="facebook.com/jaichey">facebook.com/jaichey</a>
+           </div>
+           <div class="insta">
+                <img src="instagram.png" alt="" height="30px" width="30px">
+                <a href="instagram.com/jaichey">instagram.com/jaichey</a>
+           </div>
+           <div class="what">
+                <img src="whatsapp.png" alt="" height="30px" width="30px">
+                <a href="9949875507" >+919949875507</a></div>
+           </div>
+    </div>
+</div>
+</body>
+</html>

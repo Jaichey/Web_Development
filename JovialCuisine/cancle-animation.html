@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel</title>
+    <style>
+        *{margin: 0;
+         font-family:'Proxima Nova', sans-serif;}
+        .inside{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            animation: fade 6s ease-out forwards;
+            height: 100%;
+            flex-direction: column;
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            width: 100%;
+        }
+        @keyframes fade{
+            100%{
+                opacity: 0;
+            }
+        }
+        .Thank{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            color: white;
+        }
+        .Thank img{
+            margin-top: 5%;
+            border-radius: 25px;
+        }
+        .Thank p{
+            margin-top: 1%;
+        }
+        body{
+        background-image: url("bg-foog.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .back{
+            backdrop-filter: blur(5px);
+        }
+        .footer{
+            display: flex;
+            font-size: 15px;
+            color: white;
+            padding: 2% 5%;
+            background-color: black;
+            justify-content: space-evenly;
+            margin-top: 4.6vh;
+            align-items: center;
+           
+
+        }
+        .footer a{
+            text-decoration: none;
+            color: white;
+        }
+        .footer a:hover{
+                color: yellow;
+        }
+        .rights{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -1.3%;
+        }
+        iframe{
+            border-radius: 5px;
+        }
+        .logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px double rgb(255, 255, 255,0.5);
+    font-family: "Ramaraja",serif,sans-serif;
+    font-weight: 400;
+
+}
+.logo span{
+color: blue;
+font-size: 56px;
+}
+.logo h1{
+grid-row: 1/2;
+grid-column: 2/3;
+justify-content: center;
+}
+    </style>
+</head>
+<body>
+    <div class="back">
+        <div class="logo">
+            <h1><span>J</span>ovial <span>C</span>uisine</h1>
+        </div>
+    <div class="inside">
+        <img src="check-mark.png" alt="done image" height="250px" width="250px">
+        <p ></p>Order Canceled</p>
+    </div>
+    <div class="Thank">
+        <img src="orderI.jpeg" alt="enjoy meal" height="350px" width="350px">
+        <p>We arere thankful for your patronage. <br>
+           Hope you enjoy the rest of your meal.</p>
+    </div>
+</div>
+<div class="footer">
+    <div class="maps">
+        <iframe style="margin-left: -25%;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.280583711755!2d78.48895010982362!3d17.398317283421846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb994eb916836f%3A0x2e380eae1d62caa6!2sSRVR%20BOYS%20HOSTEL!5e0!3m2!1sen!2sin!4v1725647165343!5m2!1sen!2sin" 
+            width="250" height="75" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="address" style="margin-left: -8%; margin-right: -5%;">
+        <p>#H-NO-3-54 Narayanaguda <br> 
+           Hyderabad <br>
+           Telangana <br>
+           507120</p>
+    </div>
+    <div class="rights">
+        <p><a href="terms.html">Terms and Conditions</a></p>
+        <p><a href="privacy.html">Privacy policy</a></p>
+        <p>&copy;All Rights Reserved #JaiChey</p>
+    </div>
+    <div class="social">
+           <div class="fb">
+                <img src="facebook.png" alt="" height="30px" width="30px">
+                <a href="facebook.com/jaichey">facebook.com/jaichey</a>
+           </div>
+           <div class="insta">
+                <img src="instagram.png" alt="" height="30px" width="30px">
+                <a href="instagram.com/jaichey">instagram.com/jaichey</a>
+           </div>
+           <div class="what">
+                <img src="whatsapp.png" alt="" height="30px" width="30px">
+                <a href="9949875507" >+919949875507</a></div>
+           </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+}
+.orrr{
+    border: 2px double rgb(255, 255, 255,0.5);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px double rgb(255, 255, 255,0.5);
+    font-family: "Ramaraja",serif,sans-serif;
+    font-weight: 400;
+    flex-wrap: wrap;
+
+}
+.logo span{
+color: blue;
+font-size: 56px;
+}
+.logo h1{
+grid-row: 1/2;
+grid-column: 2/3;
+justify-content: center;
+}
+
+body{
+    background-image: url("bg-foog.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+.address-card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px;
+    background-color: #fff;
+    margin: 4%;
+    height: 65vh;
+    width: 40vw;
+    margin-left: 30%;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+.address-card input{
+    height: 7vh;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0,0.2);
+    padding: 5px;
+    margin-bottom: 2px;
+}
+.address-card .pin-loc{
+    display: flex;
+    flex-wrap: wrap;
+}
+.state-city button{
+    height: 7vh;
+    width: 11.8vw;
+    margin-left: 2.4rem;
+}
+.address-card #order-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 5px;
+    margin-top: 2rem;
+    height: 5vh;
+    width: 10vw;
+    flex-wrap: wrap;
+}
+.footer{
+    display: flex;
+    font-size: 20px;
+    background-color: rgb(14, 13, 13,0.7);
+    color: white;
+    padding: 1% 2%;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px double;
+    flex-wrap: wrap;
+}
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 2%;
+    flex-wrap: wrap;
+}
+.social img{
+    margin-left: 25%;
+}
+.social a{
+    text-decoration: none;
+    color: #fff;
+}
+.social a:hover{
+    color: chartreuse;
+}
