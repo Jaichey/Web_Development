@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("https://tenor.com/view/minion-otto-tricycle-fast-rush-gif-26108413.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .outer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        .card {
+            background-color: transparent;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+            left: 40%;
+        }
+
+        .log {
+            color: white;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px #000000;
+
+        }
+
+        .user {
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .btn {
+            width: 50%;
+            background-color: #007bff;
+            border: none;
+            border-radius: 30px;
+        }
+
+        #username,
+        #password {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        .container input:focus {
+            outline: none;
+            border-color: #00aaff;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Slight dark overlay */
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container outer">
+        <div class="card">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h1 class="text-center log">Login</h1>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username" class="user">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="user">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div id="message" class="mt-3"></div>
+                        <div class="text-center user">Don't have an account <a href="TravelBlog_login.html"
+                                class="text-info h4 sign">Sign Up</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:4000/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ Username: username, Password: password }),
+                });
+
+                const messageElement = document.getElementById('message');
+                if (response.ok) {
+                    messageElement.innerHTML = '<div class="alert alert-success">Login successful!</div>';
+                    window.location.href = 'public/TravelBlog.html';
+                } else {
+                    const errorMessage = await response.text();
+                    messageElement.innerHTML = `<div class="alert alert-danger">${errorMessage}</div>`;
+                }
+            } catch (error) {
+                console.error('Error during login:', error);
+                document.getElementById('message').innerHTML = '<div class="alert alert-danger">An error occurred. Please try again.</div>';
+            }
+        });
+    </script>
+</body>
+
+</html>

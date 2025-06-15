@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travello</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        /*font-family: "Pacifico", cursive;*/
+
+        body {
+            background: #67B26F;
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            font-family: 'Lato', sans-serif;
+            color: #000;
+        }
+
+        .logo_out {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 40%;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            height: 30px;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        #visit {
+            font-size: 18px;
+            text-align: justify;
+            line-height: 3rem;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        .text {
+            font-family: "Pacifico", cursive;
+        }
+
+        .video {
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-to-animate {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-to-animate1 {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate1.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .route-steps {
+            display: flex;
+        }
+
+        .car-out {
+            width: 600px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo_out"><img src="Travello_logo_black.png" alt="Travello_logo" class="logo"></div>
+    <button class="btn btn-primary" onclick="home()">Home</button>
+    <hr>
+    <!--<video src="Paris_ The last drone aerials.mp4" class="video" autoplay loop muted></video>-->
+    <div class="car-out mx-auto bg-light p-1">
+        <div class="carouse">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" style="border-radius: 3%;">
+                    <div class="item active">
+                        <img src="https://media.istockphoto.com/id/539115110/photo/colosseum-in-rome-and-morning-sun-italy.jpg?s=612x612&w=0&k=20&c=9NtFxHI3P2IBWRY9t0NrfPZPR4iusHmVLbXg2Cjv9Fs="
+                            alt="Los Angeles">
+                        <div class="carousel-caption">
+                            <h3>Jai</h3>
+                            <p>Chey</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="https://media.istockphoto.com/id/1131534768/photo/rome-italy-papal-basilica-of-st-peter-in-the-vatican-sightseeing-boat-floating-near-aelian.jpg?s=612x612&w=0&k=20&c=NW4905Y9_w6WjsLbzSvP3QcKzbhTE_aldAlEBOuaKpw="
+                            alt="Chicago">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://media.istockphoto.com/id/508540910/photo/rome-sunset-over-tiber-and-st-peters-basilica-vatican-italy.jpg?s=612x612&w=0&k=20&c=-EpXLMOXoN7RhpRfN8R3MBX-5o00Mxmv_YhXTcvTTS4="
+                            alt="New York">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h1 class=" text text-center" style="font-size:70px">Rome</h1>
+        <p id="visit">
+            Rome, the capital of Italy, is one of the most historically rich and culturally vibrant cities in the world.
+            Known as the "Eternal City," it offers a stunning blend of ancient history, art, and modern urban life. For
+            tourists, Rome is a treasure trove of iconic landmarks, fascinating museums, and beautiful streets. This
+            essay will highlight the must-visit tourist attractions that make Rome an unforgettable destination.
+            <br><br>
+
+            <b> 1. The Colosseum: A Glimpse into Ancient Rome</b><br>
+            No trip to Rome is complete without visiting the Colosseum. As one of the New Seven Wonders of the World,
+            this monumental amphitheater has stood for nearly 2,000 years and once hosted gladiatorial contests, public
+            spectacles, and mock sea battles. Walking through its ancient corridors, visitors can imagine the roaring
+            crowds and fierce battles that took place within its walls. The Colosseum also offers an incredible view of
+            the surrounding Roman Forum and Palatine Hill, making it a perfect starting point for exploring Rome’s
+            ancient heart. <br>
+
+            <b>2. The Vatican: Center of Spirituality and Art</b><br>
+            The Vatican City, an independent city-state within Rome, is the spiritual center of the Catholic Church and
+            the residence of the Pope. Its immense religious significance is matched by its wealth of artistic and
+            architectural masterpieces. St. Peter's Basilica, the largest church in the world, is an awe-inspiring
+            structure with its magnificent dome designed by Michelangelo. Inside, visitors can marvel at famous works of
+            art, including Michelangelo’s "Pietà." <br>
+
+            Another unmissable attraction is the Sistine Chapel, home to Michelangelo’s breathtaking frescoes that
+            depict scenes from the Bible, such as the iconic "Creation of Adam." The Vatican Museums, with their vast
+            collections of art and historical artifacts, provide an opportunity to explore centuries of history in one
+            of the world’s finest museums. <br>
+
+            <b>3. The Pantheon: A Masterpiece of Ancient Architecture</b><br>
+            The Pantheon is one of the best-preserved monuments of ancient Rome and remains a marvel of engineering.
+            Originally built as a temple to all Roman gods, it is now a Catholic church dedicated to St. Mary and the
+            Martyrs. The Pantheon’s massive domed roof, with its central oculus that allows natural light to flood the
+            interior, is an architectural wonder. Its harmonious proportions and the perfect symmetry of the design make
+            it a favorite spot for architecture enthusiasts and tourists alike. <br>
+
+            <b>4. Trevi Fountain: A Symbol of Romance</b><br>
+            The Trevi Fountain is one of the most famous fountains in the world and a symbol of romance in Rome.
+            Designed in Baroque style, the fountain features Neptune, the god of the sea, surrounded by mythical
+            figures. Tradition says that if you toss a coin into the fountain over your shoulder, you will one day
+            return to Rome. The fountain is especially magical at night when it is illuminated, creating a picturesque
+            scene that has been featured in numerous films, including La Dolce Vita. <br>
+
+            <b>5. The Roman Forum: The Political Heart of Ancient Rome </b><br>
+            The Roman Forum was once the center of political, commercial, and religious life in ancient Rome. Today, it
+            stands as a sprawling archaeological site filled with the ruins of temples, government buildings, and
+            monuments. Walking through the forum offers a glimpse into the daily life of ancient Romans, and it is
+            fascinating to imagine the speeches of politicians, religious rituals, and bustling marketplaces that took
+            place here. Key sites within the Forum include the Temple of Saturn, the Arch of Titus, and the Curia, where
+            the Roman Senate once met. <br>
+
+            6. Piazza Navona: A Hub of Baroque Art and Culture <br>
+            Piazza Navona is one of Rome’s most beautiful squares, known for its lively atmosphere and exquisite Baroque
+            architecture. The square is home to several important landmarks, including the Fountain of the Four Rivers
+            by Gian Lorenzo Bernini, which represents the four great rivers of the world. The square is lined with
+            charming cafes and restaurants, making it a perfect spot to relax and enjoy some Italian cuisine while
+            soaking in the vibrant ambiance. <br>
+
+            7. The Spanish Steps: A Stunning Viewpoint <br>
+            The Spanish Steps are one of the most popular meeting points in Rome, connecting the Piazza di Spagna at the
+            bottom to the Trinità dei Monti church at the top. Visitors often sit on the steps to enjoy the view or
+            relax after a day of sightseeing. At the base of the steps is the famous Barcaccia Fountain, another
+            masterpiece by Bernini. The area around the Spanish Steps is also known for its luxury shopping, with
+            high-end fashion stores lining Via dei Condotti. <br>
+
+            8. Villa Borghese: A Green Escape in the City <br>
+            For those seeking a break from the bustling streets of Rome, Villa Borghese offers a peaceful retreat in the
+            heart of the city. This large park is perfect for leisurely walks, picnics, or renting a bike. The park is
+            also home to the Galleria Borghese, one of Rome's finest art galleries, featuring works by Caravaggio,
+            Raphael, and Bernini. From the terrace of Pincio Hill, visitors can enjoy a breathtaking panoramic view of
+            the city. <br>
+
+            Conclusion <br>
+            Rome is a city where history, art, and culture come alive at every corner. Its ancient ruins, majestic
+            churches, and lively piazzas offer endless opportunities for exploration and discovery. Whether you are
+            wandering through the remains of the Roman Empire, admiring Renaissance masterpieces, or enjoying an
+            espresso in a charming café, Rome promises a memorable experience for every traveler. The Eternal City’s
+            unique blend of the past and present continues to captivate and inspire visitors from around the world,
+            making it a must-visit destination for any traveler.
+        </p>
+    </div>
+    <div class="container gal">
+        <div class="container-fluid">
+            <div class="gal-name text-center" style="font-size: 50px;">Gallery</div>
+            <div class="row image-to-animate">
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/501396596/photo/roman-forum.jpg?s=612x612&w=0&k=20&c=dYYDZpzhCKEhiwNKNyb4zf7ik7X2jxf94FmygrdEQAY="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/509475506/photo/roman-citscape-panorama-at-sunset-rome-italy.jpg?s=612x612&w=0&k=20&c=ATkba3xNs0ufU7IR4c94mzVg14CipSrDBxROqlcwa-I="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1382341359/photo/rome-italy-view-towards-the-colosseum.jpg?s=612x612&w=0&k=20&c=BaaiJU9SBB3Ed-yFzLUWeIFosYoeUASfHfrrO4HrhuM="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1326099058/photo/view-of-vatican-city.jpg?s=612x612&w=0&k=20&c=qZceTWygOaQN4ux9Tee7a_hqt6vla5rhhSSlroATxwg="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1094564176/photo/colosseum-in-rome-and-morning-sun-italy.jpg?s=612x612&w=0&k=20&c=LNtAA6XE4rFVQy53PTeIDTQTJqDiTDycPMWk68E1TZI="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1717026172/photo/piazza-navona-in-rome-italy.jpg?s=612x612&w=0&k=20&c=EWMGgECW-4QtK6KmRAa4AkTnPe673n_S5TjydpAtzTk="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+            </div>
+            <!--<div class="row my-3 image-to-animate1">
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top " alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+            </div>
+        </div>-->
+        </div>
+        <div class="container">
+            <div class="route">
+                <div class="text-center" style="font-size: 30px;">Route Map</div>
+                <div class="route-steps">
+                    <div style="font-size: 18px;">
+                        <b>Step 1: Departure from Home City</b><br>
+                        - Verify your passport, visa (if applicable), and tickets.<br>
+                        - Arrive at the airport 3 hours before departure.<br><br>
+                    
+                        <b>Step 2: Layover at Transit Hub (if applicable)</b><br>
+                        - Confirm gate and terminal information for connecting flights.<br>
+                        - Use airport lounges or relax at available facilities.<br><br>
+                    
+                        <b>Step 3: Arriving in Rome</b><br>
+                        - Land at Fiumicino Airport (FCO) or Ciampino Airport (CIA).<br>
+                        - Clear immigration and customs.<br>
+                        - Collect your luggage at baggage claim.<br><br>
+                    
+                        <b>Step 4: Traveling from the Airport to Rome City Center</b><br>
+                        - Options include:<br>
+                            &nbsp;&nbsp;&nbsp;- Leonardo Express Train: Fast and direct to Roma Termini.<br>
+                            &nbsp;&nbsp;&nbsp;- Taxis: Fixed rates to the city center.<br>
+                            &nbsp;&nbsp;&nbsp;- Shuttle Buses: Budget-friendly and operate to key locations.<br>
+                            &nbsp;&nbsp;&nbsp;- Private Transfers: Pre-booked for convenience.<br><br>
+                    
+                        <b>Step 5: Arrival in Rome</b><br>
+                        - Check into your accommodation.<br>
+                        - Plan visits to iconic landmarks such as the Colosseum, Vatican City, and Trevi Fountain.<br>
+                    </div>                    
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158604.39477379882!2d12.371186218560663!3d41.91020879247026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e1!3m2!1sen!2sin!4v1729494624226!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <script>
+            function home() {
+                window.location.href = 'TravelBlog.html'
+            }
+            // Select the image element
+            const image = document.querySelector('.image-to-animate');
+
+            const observerOptions = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+            observer.observe(image);
+            const image1 = document.querySelector('.image-to-animate1');
+
+            const observerOptions1 = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer1 = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions1);
+            observer1.observe(image1);
+        </script>
+</body>
+
+</html>

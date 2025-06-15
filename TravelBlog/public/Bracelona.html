@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travello</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        /*font-family: "Pacifico", cursive;*/
+
+        body {
+            background: #67B26F;
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            font-family: 'Lato', sans-serif;
+            color: #000;
+        }
+
+        .logo_out {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 40%;
+        }
+
+
+        .carouse {
+            display: flex;
+            justify-content: center;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            height: 30px;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        #visit {
+            font-size: 18px;
+            text-align: justify;
+            line-height: 3rem;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        .text {
+            font-family: "Pacifico", cursive;
+        }
+
+        .video {
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-to-animate {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-to-animate1 {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate1.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .route-steps {
+            display: flex;
+        }
+
+        .car-out{
+           width: 600px;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo_out"><img src="Travello_logo_black.png" alt="Travello_logo" class="logo"></div>
+    <button class="btn btn-primary" onclick="home()">Home</button>
+    <hr>
+    <!--<video src="Paris_ The last drone aerials.mp4" class="video" autoplay loop muted></video>-->
+    <div class="car-out mx-auto bg-light p-1">
+    <div class="carouse">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="border-radius: 3%;">
+                <div class="item active">
+                    <img src="https://media.istockphoto.com/id/1301579230/photo/spanish-cities-the-sacred-barcelona-family.jpg?s=612x612&w=0&k=20&c=SoKAwh7wqsRSfhQIcRdzdiLF30DkdSrqSoFbZg4n7o8="
+                        alt="Los Angeles">
+                    <div class="carousel-caption">
+                        <h3>Jai</h3>
+                        <p>Chey</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=" alt="Chicago">
+                </div>
+
+                <div class="item">
+                    <img src="https://media.istockphoto.com/id/1418575808/photo/barcelona-eixample-residential-district-and-famous-basilica-sagrada-familia-at-sunset.jpg?s=612x612&w=0&k=20&c=DCKgyPy22r9S2YoUAwTZnX5NdS-c6Ju10X1oXm_MjzY=" alt="New York">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div> </div>
+    <div class="container-fluid">
+        <h1 class=" text text-center" style="font-size:70px">Bracelona</h1>
+        <p id="visit">
+            
+            <br><br>
+
+            <b>The Eiffel Tower: Symbol of Paris</b><br>
+            
+            <br><br>
+
+            <b>The Louvre: A World of Art and History</b><br>
+            <br><br>
+
+            <b>Notre-Dame Cathedral: Gothic Grandeur</b><br>
+            <br><br>
+
+            <b>Montmartre: The Bohemian Heart of Paris</b><br>
+           <br><br>
+
+            <b>The Seine River: Life and Leisure Along the Water</b><br>
+           <br><br>
+
+            <b>The Champs-Élysées and Arc de Triomphe: A Grand Avenue</b><br>
+           <br><br>
+
+            <b>The Latin Quarter: Intellectual and Cultural Hub</b><br>
+             <br><br>
+
+            <b>Conclusion</b><br>
+            
+        </p>
+    </div>
+    <div class="container gal">
+        <div class="container-fluid">
+            <div class="gal-name text-center" style="font-size: 50px;">Gallery</div>
+            <div class="row image-to-animate">
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1470491218/photo/aerial-view-of-the-arc-of-the-triumph-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=uwQMKDjNMfYbiSnuPxaqtZV97e8mpEvbxQYfn2RDWxM="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/875273240/photo/spanish-cities-la-sagrada-familia-barcelona-golden-hour.jpg?s=612x612&w=0&k=20&c=vrNvOIrfD4RSprZ7kgYRAQ7GHaz7IlJVzGwxv0toQT0="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2 " style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1424668659/photo/aerial-view-of-barcelona-city-skyline-and-sagrada-familia-cathedral-at-sunrise-eixample.jpg?s=612x612&w=0&k=20&c=yoNtfD6CoGVnFKAcshXdILacEGUjONTlmFgEjM1ZKUw="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1133826808/photo/pla%C3%A7a-despanya-long-exposure-at-sunset-in-barcelona.jpg?s=612x612&w=0&k=20&c=7BotbKXGKdoN_7-UR2p1gpTCeXi-6TRsIgo7LRqIRj4="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/509288876/photo/tossa-de-mar-on-the-costa-brava-catalunya-spain.jpg?s=612x612&w=0&k=20&c=51Nw_Kd-_SDBd_RiBSqjv4JC5ZKDeO6oYfv6niYYNNQ="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="https://media.istockphoto.com/id/1456410500/photo/barcelona-view.jpg?s=612x612&w=0&k=20&c=adxIpLUMlvJh3iXC4S1wg1SSdkd0_BbCwyazkNWIJ14="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+            </div>
+            <!--<div class="row my-3 image-to-animate1">
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <img src="image.jpg" class="card-img-top " alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </div>
+            </div>
+        </div>-->
+        </div>
+        <div class="container">
+            <div class="route">
+                <div class="text-center" style="font-size: 30px;">Route Map</div>
+                <div class="route-steps">
+                    <div style="font-size: 18px;">
+                        <b>Step 1: Departure from Home City</b><br>
+                        - Confirm your passport, visa (if required), and flight tickets are ready.<br>
+                        - Arrive at the airport 3 hours before departure for international flights.<br>
+                        - Check in your luggage and proceed through security.<br><br>
+                    
+                        <b>Step 2: Layover at Transit Hub (if applicable)</b><br>
+                        - If your flight includes a layover, check your connecting flight’s gate and terminal information.<br>
+                        - Use airport lounges or facilities to relax during long layovers.<br><br>
+                    
+                        <b>Step 3: Arriving in Barcelona</b><br>
+                        - Land at Barcelona-El Prat Airport (BCN).<br>
+                        - Proceed to immigration counters for entry clearance.<br>
+                        - Collect your luggage at the baggage claim area.<br><br>
+                    
+                        <b>Step 4: Traveling from Barcelona-El Prat Airport to Barcelona City Center</b><br>
+                        - Options include:<br>
+                            &nbsp;&nbsp;&nbsp;- Aerobús: A direct bus service connecting the airport to Plaça de Catalunya in the city center.<br>
+                            &nbsp;&nbsp;&nbsp;- Metro: Line L9 Sud links the airport to the city's metro network.<br>
+                            &nbsp;&nbsp;&nbsp;- Taxis: Available at designated ranks; ensure the driver uses the meter.<br>
+                            &nbsp;&nbsp;&nbsp;- Ride-Hailing Apps: Options like Uber or Cabify can be used for convenient transport.<br>
+                            &nbsp;&nbsp;&nbsp;- Train: The R2 Nord line connects the airport to Barcelona-Sants and other major stations.<br><br>
+                    
+                        <b>Step 5: Arrival in Barcelona</b><br>
+                        - Check into your accommodation and unwind from your journey.<br>
+                        - Explore nearby attractions or enjoy local delicacies like tapas and paella.<br>
+                        - Plan your itinerary to visit iconic spots such as Sagrada Família, Park Güell, and La Rambla.<br>
+                    </div>
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79941.77905423238!2d2.057787408256405!3d41.39276734348303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona%2C%20Spain!5e1!3m2!1sen!2sin!4v1729494711761!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <script>
+            function home() {
+                window.location.href = 'TravelBlog.html'
+            }
+            // Select the image element
+            const image = document.querySelector('.image-to-animate');
+
+            const observerOptions = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+            observer.observe(image);
+            const image1 = document.querySelector('.image-to-animate1');
+
+            const observerOptions1 = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer1 = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions1);
+            observer1.observe(image1);
+        </script>
+</body>
+
+</html>

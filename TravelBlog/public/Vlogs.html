@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travello</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        /*font-family: "Pacifico", cursive;*/
+
+        body {
+            background: #67B26F;
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            font-family: 'Lato', sans-serif;
+            color: #000;
+        }
+
+        .logo_out {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 40%;
+        }
+
+        .item {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carouse {
+            display: flex;
+            justify-content: center;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            height: 30px;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        #visit {
+            font-size: 18px;
+            text-align: justify;
+            line-height: 3rem;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        .text {
+            font-family: "Pacifico", cursive;
+        }
+
+        .video {
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-to-animate {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-to-animate1 {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate1.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .route-steps {
+            display: flex;
+        }
+
+        .card-title {
+            font-size: 20px;
+        }
+
+        .card-content {
+            font-size: 12px;
+        }
+
+        .drop-area {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .drop-area:hover {
+            background-color: #f0f0f0;
+        }
+
+        .image-display {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #targetImage {
+            display: none;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+        #reuploadBtn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 10px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo_out"><img src="Travello_logo_black.png" alt="Travello_logo" class="logo"></div>
+    <button class="btn btn-primary" onclick="home()">Home</button>
+    <hr>
+    <div class="container gal">
+        <div class="container-fluid">
+            <div class="gal-name text-center" style="font-size: 50px;">Vlogs/Blogs</div>
+            <div class="row image-to-animate">
+                <div class="card m-2 " style="width: 20rem;">
+                    <a href="Paris.html">
+                        <img src="https://media.istockphoto.com/id/2119799972/photo/spring-evening-view-of-the-eiffel-tower-in-paris.jpg?s=612x612&w=0&k=20&c=eToYv7xbRNVqLhyKfHoF2oQLb2YFd-RDxoOgt6zoTZo="
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Paris</div>
+                        <div class="card-content">JaiChey</div>
+                    </div>
+                </div>
+                <div class="card m-2 " style="width: 20rem;">
+                    <a href="Rome.html">
+                        <img src="https://media.istockphoto.com/id/539115110/photo/colosseum-in-rome-and-morning-sun-italy.jpg?s=612x612&w=0&k=20&c=9NtFxHI3P2IBWRY9t0NrfPZPR4iusHmVLbXg2Cjv9Fs="
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Rome</div>
+                    </div>
+                </div>
+                <div class="card m-2 " style="width: 20rem;">
+                    <a href="Bankok.html">
+                        <img src="https://media.istockphoto.com/id/483816132/photo/bangkok-cityscape.jpg?s=612x612&w=0&k=20&c=58yp-hppLeL4rmCav2Kvs7IgAfhlqn_JSWh9Jw2QiXs="
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Bankok</div>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 20rem;">
+                    <a href="Bracelona.html">
+                        <img src="https://media.cntraveler.com/photos/591f1c7d1f187a2af3dedef0/master/w_320%2Cc_limit/barcelona-park-guell-GettyImages-512152500.jpg"
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Bracelona</div>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 20rem;">
+                    <a href="Dubai.html">
+                        <img src="https://media.istockphoto.com/id/1550914351/photo/dubai.webp?a=1&b=1&s=612x612&w=0&k=20&c=icJdVkhtVDjWCvRiZERJ128_IygHDkv5h7bBavF2dUg="
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Dubai</div>
+
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 20rem;">
+                    <a href="Hyderabad.html">
+                        <img src="https://t4.ftcdn.net/jpg/03/60/89/09/240_F_360890991_Ykybj5JO5HYBaqWeROz9cR2jWXN8HZxf.jpg"
+                            class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                    </a>
+                    <div class="card-body">
+                        <div class="card-title">Hyderabad</div>
+                    </div>
+                </div>
+                <div id="card-container"></div>
+            </div>
+            <!--<div class="row my-3 image-to-animate1">
+                <div class="card m-2" style="width: 20rem;">
+                    <a href="#">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                        </a>
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <a href="#">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                        </a>
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <a href="#">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                        </a>
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <a href="#">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                        </a>
+                </div>
+                <div class="card m-2" style="width: 30rem;">
+                    <a href="#">
+                    <img src="image.jpg" class="card-img-top " alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                        </a>
+                </div>
+            </div>
+        </div>-->
+        </div>
+    </div>
+    <div id="vlog">
+        <div class="container d-flex justify-content-center align-items-center my-5 ">
+            <div class="container mt-5 w-50">
+                <h2><strong>New Blog/Vlog<i class="fa-solid fa-arrow-right-to-bracket mx-2"></i></strong></h2>
+                <p id="res" class="mt-3"></p>
+                <form class="row g-1 col-md-12 form-floating" id="loginForm">
+                    <div class="drop-area" id="drop-area">
+                        <h1>Cover Snap</h1>
+                        <p>click to upload</p>
+                        <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+                    </div>
+                    <div class="image-display">
+                        <img id="targetImage" src="#" alt="Target Image" style="display: none;">
+                        <button id="reuploadBtn" style="display: none;" class="btn btn-primary">Re-upload Image</button>
+                    </div>
+                    <div class="col-md-12 form-floating">
+                        <input type="text" class="form-control" id="VlogName" placeholder="JaiChey" required>
+                        <label for="floatingName"><i class="fa-solid fa-signature mx-2"><b></i>Blog/Vlog Name
+                            &#42;</b></label>
+                    </div>
+                    <div class="col-md-12 form-floating">
+                        <input type="text" class="form-control" id="PlaceName" placeholder="Jai2308_" required>
+                        <label for="floatingUserName"><i class="fa-solid fa-user mx-2"><b></i>Place &#42;</b></label>
+                    </div>
+                    <div class="col-md-12 form-floating">
+                        <input type="date" class="form-control" id="uploadDate" placeholder="23-02-2004" required>
+                        <label for="floatingContact"><i class="fa-solid fa-cake-candles mx-2"><b></i>Uploaded Date
+                            &#42;</b></label>
+                    </div>
+                    <textarea name="about" id="aboutVlog" placeholder="About Blog/Vlog" class=" p-2 m-2 col-md-10"
+                        required></textarea>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center"><button class="btn btn-primary"
+                onclick="save()">Save</button>
+        </div>
+    </div>
+    <div><button class="btn btn-primary" onclick="vlog()">Add Blog/Vlog</button></div>
+    <script>
+        const dropArea = document.getElementById("drop-area");
+        const fileElem = document.getElementById("fileElem");
+        const targetImage = document.getElementById("targetImage"); // Target image tag
+        const reuploadBtn = document.getElementById("reuploadBtn"); // Re-upload button
+
+        let isFileDropped = false; // Flag to avoid double trigger
+
+        // Check if there's an image saved in localStorage and load it on page load
+        window.onload = () => {
+            const savedImage = localStorage.getItem('uploadedImage');
+            if (savedImage) {
+                targetImage.src = savedImage;
+                targetImage.style.display = 'block';  // Show the saved image
+                reuploadBtn.style.display = 'block';  // Show the Re-upload button
+                document.getElementById('drop-area').style.display = 'none';  // Hide the drop area
+            }
+        };
+
+        // Prevent default behaviors on drag events
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drop area on drag over
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.add('highlight'), false);
+        });
+
+        // Remove highlight on drag leave or drop
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.remove('highlight'), false);
+        });
+
+        // Handle dropped files
+        dropArea.addEventListener('drop', (e) => {
+            isFileDropped = true;  // Mark that the file was dropped
+            handleDrop(e);
+        });
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);  // Convert the image to base64
+                    reader.onloadend = () => {
+                        const base64String = reader.result;
+
+                        targetImage.src = base64String;  // Set uploaded image to target image tag
+                        targetImage.style.display = 'block';  // Display the image
+                        reuploadBtn.style.display = 'block'; // Show the Re-upload button
+                        document.getElementById('drop-area').style.display = 'none'; // Hide drop area
+
+                        // Save the image in localStorage
+                        localStorage.setItem('uploadedImage', base64String); // Store image as base64 string
+                        console.log(localStorage.getItem('uploadedImage'));
+                        isFileDropped = false; // Reset flag after successful upload
+                    };
+                }
+            }
+        }
+
+        // Disable drag-and-drop functionality by removing event listeners
+        function disableDragAndDrop() {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.removeEventListener(eventName, preventDefaults, false);
+            });
+
+            dropArea.removeEventListener('drop', handleDrop, false);
+            dropArea.style.cursor = 'not-allowed';  // Change cursor to indicate disabled state
+            dropArea.querySelector('p').textContent = 'Image Uploaded';
+            document.getElementById('drop-area').style.display = 'none'; // Hide the drop area
+        }
+
+        // Re-enable drag-and-drop functionality for re-upload
+        function enableDragAndDrop() {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            dropArea.addEventListener('drop', handleDrop, false);
+            dropArea.style.cursor = 'pointer';  // Reset cursor
+            dropArea.querySelector('p').textContent = 'Drag & Drop an image here or click to upload';
+            targetImage.style.display = 'none';  // Hide the previous image
+            reuploadBtn.style.display = 'none';  // Hide the Re-upload button
+            document.getElementById('drop-area').style.display = 'block'; // Show the drop area again
+        }
+
+        // Trigger file selection dialog on click, only if not triggered by drag-and-drop
+        /*dropArea.addEventListener('click', () => {
+            if (!isFileDropped) {
+                fileElem.click();
+            }
+        });*/
+
+        // Handle Re-upload button click
+        reuploadBtn.addEventListener('click', () => {
+            fileElem.value = ''; // Clear the previous file input value to ensure re-upload works
+            enableDragAndDrop(); // Re-enable drag-and-drop and allow new upload
+            fileElem.click();    // Open the file selection dialog for re-upload
+        });
+
+        fileElem.addEventListener('change', () => {
+            if (fileElem.files.length > 0) {
+                handleFiles(fileElem.files); // Handle file if selected via the input
+            }
+        });
+
+    </script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            save();
+        });
+        document.getElementById('vlog').style.display = 'none';
+        function vlog() {
+            document.getElementById('vlog').style.display = 'block';
+        }
+
+        function save() {
+            let vlogName = document.getElementById('VlogName').value;
+            let vlogPlace = document.getElementById('PlaceName').value;
+            let uploadDate = document.getElementById('uploadDate').value;
+            let aboutVlog = document.getElementById('aboutVlog').value;
+            console.log(vlogName)
+            console.log(vlogPlace)
+            console.log(uploadDate)
+            console.log(aboutVlog)
+            if (vlogName && vlogPlace && uploadDate && aboutVlog) {
+                alert("Vlog/blog Created Successfully");
+
+                localStorage.setItem('VlogName', vlogName);
+                localStorage.setItem('VlogPlace', vlogPlace);
+                localStorage.setItem('uploadDate', uploadDate);
+                localStorage.setItem('aboutVlog', aboutVlog);
+                document.getElementById('vlog').style.display = 'none';
+                createCard(
+                    //imageSrc, title, description, date,vlogDetails
+                    imageSrc = localStorage.getItem('uploadedImage'),
+                    title = localStorage.getItem('VlogPlace'),
+                    description = localStorage.getItem('VlogName'),
+                    date = localStorage.getItem('uploadDate'),
+                    vlogDetails = localStorage.getItem('aboutVlog')
+                );
+            }
+            else {
+                alert("Please Fill All Details");
+            }
+        }
+        //}
+        function home() {
+            window.location.href = 'TravelBlog.html'
+        }
+        // Select the image element
+        const image = document.querySelector('.image-to-animate');
+
+        const observerOptions = {
+            threshold: 0.5 // Trigger when 50% of the image is in view
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+        observer.observe(image);
+        const image1 = document.querySelector('.image-to-animate1');
+
+        const observerOptions1 = {
+            threshold: 0.9 // Trigger when 50% of the image is in view
+        };
+
+        const observer1 = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions1);
+        observer1.observe(image1);
+
+        function createCard(imageSrc, title, description, date, vlogDetails) {
+            // Create the card element 
+            const card = document.createElement('div');
+            card.classList.add('card', 'm-2');
+            card.style.width = "20rem";
+
+            // Create the image element
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = title;
+            img.style.height = "200px";
+            img.style.objectFit = "contain";
+            card.appendChild(img);
+
+            // Create the card body
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            // Create the title element
+            const cardTitle = document.createElement('h3');
+            cardTitle.classList.add('card-title');
+            cardTitle.textContent = title;
+            cardBody.appendChild(cardTitle);
+
+            // Create the description element
+            const cardDescription = document.createElement('p');
+            cardDescription.classList.add('card-description');
+            cardDescription.textContent = description;
+            cardBody.appendChild(cardDescription);
+
+            // Create the date element
+            const cardDate = document.createElement('p');
+            cardDate.classList.add('card-date');
+            cardDate.textContent = date;
+            cardBody.appendChild(cardDate);
+
+            // Create the vlog details element
+            const vlogDetail = document.createElement('p');
+            vlogDetail.classList.add('vlog-details');
+            vlogDetail.textContent = vlogDetails;
+            cardBody.appendChild(vlogDetail);
+
+            // Append the card body to the card
+            card.appendChild(cardBody);
+
+            // Append the card to the container
+            const cardContainer = document.getElementById('card-container');
+            cardContainer.appendChild(card);
+            
+        }
+    </script>
+</body>
+
+</html>

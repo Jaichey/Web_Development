@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travello</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        /*font-family: "Pacifico", cursive;*/
+
+        body {
+            background: #67B26F;
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            font-family: 'Lato', sans-serif;
+            color: #000;
+        }
+
+        .logo_out {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 40%;
+        }
+
+
+
+        .head {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            height: 30px;
+            font-size: 15px;
+        }
+
+        #visit {
+            font-size: 18px;
+            text-align: justify;
+            line-height: 3rem;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        .text {
+            font-family: "Pacifico", cursive;
+        }
+
+        .video {
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-to-animate {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-to-animate1 {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: transform 2s ease-out, opacity 2s ease-out;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .image-to-animate1.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .route-steps {
+            display: flex;
+        }
+
+        .car-out {
+            width: 600px;
+
+        }
+
+        .in-images {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #scrollToTopBtn {
+            position: fixed;
+            top: 530px;
+            left: 90%;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo_out"><img src="Travello_logo_black.png" alt="Travello_logo" class="logo"></div>
+    <button class="btn btn-primary" onclick="home()"><i class="fa-solid fa-house-user mx-2"></i></i>Home</button>
+    <hr>
+    <!--<video src="Paris_ The last drone aerials.mp4" class="video" autoplay loop muted></video>-->
+    <div class="car-out mx-auto bg-light p-1">
+        <div class="carouse">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" style="border-radius: 3%;">
+                    <div class="item active">
+                        <img src="https://media.istockphoto.com/id/2119799972/photo/spring-evening-view-of-the-eiffel-tower-in-paris.jpg?s=612x612&w=0&k=20&c=eToYv7xbRNVqLhyKfHoF2oQLb2YFd-RDxoOgt6zoTZo="
+                            alt="Paris" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h3>Jai</h3>
+                            <p>Chey</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="https://www.travelandleisure.com/thmb/umgyFFNXsftCyQhPo6Ee3rQSk0Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/3-paris-social-niche1115-470f7989143d49f7a3def0ac3940988d.jpg"
+                            alt="Paris" class="d-block w-100">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://www.travelandleisure.com/thmb/q3jFU-mS1pz2QFov_4IiSj-2nDA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/19-paris-social-niche1115-40fc88f6912d48ceb2d3dd9addc43c15.jpg"
+                            class="d-block w-100" alt="Paris">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h1 class=" text text-center" style="font-size:70px">Paris</h1>
+        <p id="visit">
+            Paris, the "City of Light," is one of the most iconic and romantic destinations in the world. Known for its
+            stunning architecture, rich history, vibrant culture, and artistic heritage, Paris attracts millions of
+            visitors every year. From the grandeur of its monuments to the charm of its quaint streets, the city offers
+            something for everyone. Here, we explore some of the most famous landmarks as well as lesser-known treasures
+            that make Paris a truly magical destination. <br><br>
+
+
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">The Eiffel Tower: Symbol of Paris</b><br>
+            No trip to Paris is complete without a visit to the Eiffel Tower, the most recognizable landmark in the
+            world. Constructed in 1889 for the Exposition Universelle, this iron tower stands 324 meters tall and offers
+            breathtaking views of the city. Visitors can take an elevator or climb the stairs to the top, where they are
+            rewarded with panoramic vistas of Paris’s sprawling boulevards, the Seine River, and other famous landmarks.
+            At night, the tower sparkles with thousands of lights, making it a symbol of Parisian elegance and romance.
+            <br><br>
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/AHF2FYISNJO55J6N35YJBZ2JYY.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,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"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://thumbs.dreamstime.com/b/paris-city-view-7758365.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+
+            <b class="text d-flex justify-content-center">The Louvre: A World of Art and History</b><br>
+            The Louvre Museum is another must-visit destination, housing one of the most extensive and important art
+            collections in the world. Originally a royal palace, the Louvre became a museum in 1793 and is now home to
+            masterpieces such as Leonardo da Vinci’s Mona Lisa, the Venus de Milo, and Eugène Delacroix’s Liberty
+            Leading the People. The museum's iconic glass pyramid at the entrance adds a modern twist to the grandeur of
+            its classical architecture. Visitors can easily spend an entire day wandering through its vast galleries,
+            exploring works from ancient civilizations to modern art. <br><br>
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://cdn.britannica.com/98/2198-004-C24CEA2C/Louvre-Museum-Paris-IM-pyramid-Pei.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://media.cntraveller.com/photos/62c5729a5ac1132e707afa35/master/w_1600%2Cc_limit/most-beautiful-paris-louvre-GettyImages-536267205.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/2e/40/26.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">Notre-Dame Cathedral: Gothic Grandeur</b><br>
+            The Notre-Dame Cathedral, located on the Île de la Cité in the heart of Paris, is a masterpiece of French
+            Gothic architecture. Built between the 12th and 14th centuries, it is renowned for its intricate sculptures,
+            towering spires, and stunning stained-glass windows. The cathedral’s rose windows are particularly famous
+            for their beauty and craftsmanship. Though a fire in 2019 caused significant damage, Notre-Dame remains one
+            of Paris’s most beloved landmarks, and restoration efforts are ongoing. Climbing to the top of its towers
+            offers a striking view of Paris, with the Seine River winding below. <br><br>
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://cdn.britannica.com/54/42754-050-E9A92037/quality-choir-interior-nave-cathedral-Notre-Dame.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://cdn.britannica.com/35/155335-050-D0C61BB7/Notre-Dame-de-Paris-France.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.friendsofnotredamedeparis.org/wp-content/uploads/2020/04/NDP11.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">Montmartre: The Bohemian Heart of Paris</b><br>
+            For a more intimate and artistic experience, visitors can explore the Montmartre district. Known for its
+            bohemian history, Montmartre was once home to famous artists like Pablo Picasso, Vincent van Gogh, and Henri
+            Matisse. At its summit sits the stunning Basilica of the Sacré-Cœur, offering one of the best panoramic
+            views of Paris. The narrow, cobblestone streets of Montmartre are filled with charming cafes, art studios,
+            and street performers, capturing the creative spirit of the city. Place du Tertre, a bustling square, is the
+            perfect place to watch artists at work, creating portraits and landscapes. <br><br>
+
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/cf/87/61/caption.jpg?w=1200&h=-1&s=1"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDc46alRDiL5O7-gXVLBrjVRYr7SYeF4blkQ&s"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://cdn.pixabay.com/photo/2021/12/21/15/41/montmartre-6885506_640.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">The Seine River: Life and Leisure Along the Water</b><br>
+            The Seine River is the lifeblood of Paris, dividing the city into its Left and Right Banks. A walk along the
+            river offers views of some of Paris’s most iconic landmarks, including the Eiffel Tower, the Louvre, and
+            Notre-Dame Cathedral. River cruises are a popular way to see the city from a different perspective,
+            especially at night when the city is illuminated. The banks of the Seine are also lined with bouquinistes,
+            open-air booksellers who have been a part of Parisian life for centuries, offering a charming reminder of
+            the city’s literary history. <br><br>
+
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.cruiseontheseine.com/wp-content/uploads/2023/02/seine-river-history.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVnxhb1-GRS8jSyEaEA2R6YPUMIMcUR7FpQ&s"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5123x2882+0+438/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F00%2F72%2F11e83cc54562843e14366b149132%2Fap24197550645411.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">The Champs-Élysées and Arc de Triomphe: A Grand Avenue</b><br>
+            The Champs-Élysées is one of the most famous avenues in the world, stretching from the Place de la Concorde
+            to the Arc de Triomphe. This wide boulevard is lined with shops, cafes, theaters, and luxury brands, making
+            it a hub of Parisian life. The Arc de Triomphe, commissioned by Napoleon in 1806, stands at the top of the
+            avenue, honoring those who fought for France during the Napoleonic Wars. Visitors can climb to the top for
+            another stunning view of the city, with the Champs-Élysées stretching out below. <br><br>
+
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.artstorywalks.com/wp-content/uploads/2022/02/Arc-de-Triomphe-de-Nuit-1024x680.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTExMVFhUXGB4YFxgYGBoeHxcdHiAeGxgfGhgaHighGhonHhgYITEhJSkrLi4uGCAzODMtNygtLisBCgoKDg0OGhAQGy0lHyYtLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALoBDwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgEHAP/EAEAQAAIBAgQDBgMGBAQGAwEAAAECEQMhAAQSMQVBUQYTImFxgTJCkSNSobHB0RQVYvAHcuHxM0OCkqKyNFPCFv/EABgBAAMBAQAAAAAAAAAAAAAAAAABAgME/8QAJhEAAgICAgICAgIDAAAAAAAAAAECERIhMVEDQRMiMmGBkXGhsf/aAAwDAQACEQMRAD8A3oUdD9TjopjH2rHdWOqzno+nzxwuOf5Y+1Y+9sFgQZ16YqZ+gwUqDoMS0L5YeSFiwMMfPHTUPQfTBfdrjndjDzQsGCaz0H0x9J6D6YJIQEAnEzTXzwZoMGBQcfaDgzSMfBRh5iwAxROOmicHWx8DhfIx4IA7o9DiJpHphn3g6Y+73yGD5GGC7FgpHpjvcnocMe88hj7vTh/IwwQv/hm6Y5/DnDHvm8sR1nywfIxYICXKk7DE/wCAbBOo4+1tg+RjUYg38ubE14WeZGLu9brjnet1ws5dhjDoiOE/1fhj7+U/1fhiXet1xzvG64WU+x1Do4OEj734Y6eFD7xxzvG6453rdcFz7FUOjv8AKR97H38qHXHO9briJqN1w7n2FQ6JfyzzxJeGDmcVa26nHCx6nBcuw+vQUuTUdMfNQwJqPXHNR64VPseS6EvAeJPUpVTUJZgxUHaLKeUdcU5bjrNVphmUAkqVtJ+6Y9RE+eL+DZei6kUHHiN5BLSTDal1Qs2AsRzwTS7P06cvLagZkzAPlLAWw35fHsUfFN1sJpZlu8dW06RdGBHi+8D0IJAwR3w6j64U08kzB11geIkHSDE9CGv9OXviz+GfQV7wA6r1BTG0fCBzPr+OM3KJooyGYqjqPrjiZpSxUMCw3HTA0hTIiwgDuhc36meXI8sLeEJX7x3qUhBNp0gnntsbRzPvhZRHi1Q/D46GxSKxuGSANizH2FrcsUilplmCwJgLveJm58V1i43+k5orBiztDV8Uf1L+mNCTjLcXfUQdOmSnhsY25ixw5rOVEmVG5Ihx5TPwnyE4SkinHgYasdnC/MZiBIHKZjaeoJFhzvP54jmMwqrJ5C5ZmUC248JkTz32w80TiMpx2cL1qAFQwaTyIeOsBoid+fL60UXarcIKcGCDUkNysADFhO15wZoMRvOONUA3IHqcJ+8qMSAtKFJU63M+GZ2Aiyztt7wTT2kmkGCkgAAgx0JIPT4oO/rgzQYh3er1H1GPhVHUfUYHOQJEsqQeelTaxuYO0YqrZFbaUSNiQosT7TO1j+dsPOIYMO1eY+uJDCkZWkjQ8D+vRpANokloi+9r47nEZT4VR13DF9M3uNjeLgg8/LDyQsGNDj7CgCl8zUlkG3eLe8dZ2PXFYzOWRWirTITxM+ojziJv05SDh2hYjrH2BKGSSoAyMrC5nUeZMSCbeWKauQUat5B+9E9YkRyODKIYMY44cANw6lJBFQQeTWPrHviNbhSNBSpUA3JE3+o2jy5YMo9ixl0HnHMKhRpSoRmcEkSKi8t/OZEQeZxfQyNAmDmIYqDoNQSs3vbpH1w8o9iwl0HRjhwKMhSkAVS0zdXJAg8/xGINlVJAQs0iRDC4MXHiBMSOXPBlHsHCS9BuOYW18gyOqNcHmC9pIFyTEifrzwPxPh3hqmlXYPTaApcQ1lN52iTt0xX17I30Oscwm4fw6q9LU1aXkDSk/uAZ3n1xenCnJ+Nx5ipM2k2m3+nvg+vYVLoyVDOIM2WUlalN9M2XvCCRB5GY5wb/AE0XGuJVMvSLOVYt8JDzpMSAVsSSRy89sc7TcE79GkUzUiQyEyCIJ+LTINxzvjCfx/hWhmg/dA+FT4WXzBj298cEptPf9mzeGjccC7R06oDVgqsTZA5sIF2ZwsRe0cxvhm9NiihGDavFqNzpaGVbHaI6+uPK83w8aXq06xqUlvpPhZBO7gTK8tQ5nlyPy/ajMLSpojqq0xpUwL84JIJ5+XLC+RoF5K/I9HfguYI8NUhehqFoPMAtf8bbYsXKuEmnXdgBOhkUsNw0Mwgen74zOV7TJUIk6GWkSTUbwkiLC5m5PIW9Iw04NxJKya0qHcWBBtAizAMF8pMdcaR8mWkV9eV/0PajmBAWqpXp3d/SQYNuY+9hmH1EAoE2HwjT5Ezzt+Awlo1WFRZrGBuAkSIJ3LWuVJgfLgihUU2ZitUknxUx6RJPQ8z7YbstNBGZqlF8SJ4fiYjYf/oWwPTzKBi32UQJPlaAF22O/wCIx8a9MeHvkDrzKgFRf16c/wDb7XQqagtZW8YZ0lVvIJB1GQpgg7Ym6KOfyCh/xkqVdTXADuB0uC9p5D0wS/DVbadQAB1X3ANgD69cKOMcXGWDE08xU5EIVlLAr4AZPqb+tsJqnGM5VGpcs4okqJZZchjchQRBAEm1pxNiuK0aypRdNREKQd2lQenM2ueWCMvl5g1NIm4K6ha0RIPXy3GM2uXzzMpXSqMVDMxTVFwSVLchyJm488P14U7AEZhg3pMR6CD6/wCuGnZRKtl3OuCmmQFOu5XnIi2+LsrlEZjDFXFyWm3Kxm4v74uynDQoh31nkSpt15wcU1+EAqVFWqOpGrV9R+mB2GijOFtb0y6kG92sAei7qYm453M4jmaEHxVYga9BQ2Ai4e3h3N+vliyllBTXStwDq8TAlpBDA6jMSZ9feYO6gANRjVYCZ6mSVE39ed8K6GCZmkpY0imt7eHcvBkG5jR1vyFsXpkVpOIoop2MJG/QwJF/L8MVGpSUro0o0XGkjwgwT4Ijffym+D2ekSzL3j7TpDGJ52JP06nDi7E0C5fL0tTMaKK3MBbWJMsepHlbEazF0KaA23yLfa8CCP0nBeYUKodaRY8lPhi0GWgm4PxGeeBjl1lytDZQxGm5tJhmALGfppjmMNsSsqq5P7PxOZIiADF4mCTy5RirIUWI+BgoABLQR+czvvG8TidEOrlEhRIMeIC8E2B0rPQTj6rRZncqacBdXiUEGwLyYEzETtbyuXXIWSfPKG8BUHow5j19r+uLmBZGlkZmuANQFgAb/D02tfCbhXGKFWhUrUleowv3YLayx5AH1NxOxwaKHeaKllJBGm/hHyqQRBMk3sJ8sCmStltOiFIBprNgCqiCd2kkSNptO/LEadNFJBWlpJmFXSNO8TzgRc9MRzLZbvSj16hYgKFDsIWCZVVYT5xPLEKWTuTR7lk2+0V7n1eRMjcdRvhpoe0QrU9Dgo6mQToZTqUcgpAH/kZ8sFEgaWAqKQCOgiAYtFgQB7c8RzJdCZVSIEgAs2rYgHZlkbziWgCnqBJOktpMwCBcDTIX2JxVk0c1h9qmox4QWvMzAKmJkC3UDAxp0WViqByx+0O4LCJD6b6o69MQp556ZCHLmCxiCdBMXIZlB5c52xChnCPAw1tqnxFCUEHYa9Qafe+BW+RWlwMBqXQNCUkFiVYgGBbobXGI1ZQhrRG+tr8hOmYEW2xU7VXpGoZ+z8Ol1CmrOx1QSt4JIH5YFy3E8uKlQVSikgFfEqaRJMSx8fxeXxedle6H6tmmrrFNmGkqo2mdvITOMt2v4RQzSIaYUV1iLqNU/Esi8zcGxt5402SpyHGoGUvYRBmJtJFzzjfzOM1Sq5mNIy9KNV2aoAG32FoG/wBMZL7LouSXDPP8mDQqakU+EkMpBJMfECDMC1wcN8zUyucVZ+wrCAvPVzBJsAdx7/QLtBk2o5k60C6l1gIfDLM2omTJ+AnmfEcLWemYJe5PIEX9dzjDKUXRyO4umczmRfLt9suiZ0gn4z1EEiIPWcUrXLGdlmDHM8gBc9CcaHNdpW+GW7rUIAeTEQFG5A3i1pIwZxjJU8zl1q5M3QG1R/CoMlokSWnp05YqlLgFG+BZwPPrTenTqhmQuGBNtJIKnUOYPQgeU4171KZp6qF0Zo7tyGTYk6DqGkwOqm2xx5vwyv4wx0uy308vORzH7fTW5YLmIOWKowDTLABmZSoAb5QbiW5Gxw42tG/ieqZpbU9TstMHwBNYURK8nImwkAkj8Bgz+ZabVEZQIvAIPnYX33388IuBcSqk1KVZCbgEwBpiQJBhWXSB4gxmNjjVZXLUXUoPCb2Hn5QLemKg7s2kqBzUpVtJmSpBBHI+h+sTiXcPyvp1Qb3EbHUp59IjlgKl2aZDVOrVrqvUUqT4VIFo2BkE++GGR4VUZATUOnpDT+Bvi5RQlIOeuYVRqAUgjaG6g2mB+2KctmNK+KDefjPO5sTIE7Dljo4EedRz5Qv64mez6dXPL4ot6D3wqHZWM6u/2YMevO14nrbEa3EBO8SIMA/XlfzwQvBaQMEA/wCZifzOCqfDqQNkX/t/XngVgKV4qAIWqx+h3ueeK0z5taoxiJg9Z5D1w/Wgq+XnAGItmKYN2Uf9X6YKCxIxqOb0GJiQT+d4xaqVhDd2ixczEgDyk4P/AJnR5EH0UnFL8WVwVVGbUCOV/f3w6EVZziAddEeLlBI1/e8NzAtfzIthYdasQkTINwSZMajYg6ATsPxsBKvxOnTqMCul9Ot9WrVE2lmG3gYXPL64btB2nGsrRIYMouJ6AWiJ25z5W3zlN3oVxitmw7QdoqWWSk7r3jt8I2sLewvyF8ZnI8Tq8RqFYYZVDLgECfuq33gwiwtbrvlilSoQaj62BEU5JYydvqdhvPLHoXZ6vl8shU1Zcr4wUUKW6gMsrEnnczOHBZszzsa0MsqEQWGlTpEsQsybLJAnaf0wRmtJXRrB3AOk+ENMmJEiSp35fUTNcRDyaL5Ym3gcG+8wyMCNuYO+CaeRGnSHpk/EsLYwux8RMeU8jzxrjj6ZVprVC3Ps1XLFapFKQFFSnFgCIIW5WeUk7m+LOAOtBRLtVfxA1GVtD6riQqlZAgSY2jywUaTnvG+yuojQWlSCZaCBIhhNzZLb4I4bQIGtgJY7G+m14uZJIJ9DGHaXYVfRHOkqFKKFUrZ1LASxAUfEJM+h5CJxX/DVlV0FQd4yRTZqZAvedBlWv6csE5+t3yNTcMqythF4edyNjpk+RMXGBq2WpP8AalmUQ2vSdMn7xIJJ2kdZ6YKAnTyxC1DUSmajToKbCxInU0qJBtPKMZzOvlxq7x3VuoRys2ABNOZG8knDzPcVvGkvSYgIytpM9IYQbXt0xDiAKpKyJEayAZUzYU0EtymBFh0sVRLoByfBEdA9J2KhhJBUK3UGQSJNo1YbZ2ax1lDBjdSpA3589uvPCirxahSP8PWqiGAOnS0AjYsJ8DGJiek4a8Cag1QpSq6tphybEE8ztIH97VSl7Jyp0jJf/wBLWrBV/h2qgESpU+KAReQQuzchfFlNc73s0suiAMdIYqBBJkaZUkQL+EG+2H1DjlGuxOrRAACsQSSWWCJ8tQjzPTDHiOYp0u8OpZGohWeAZCbdBY+4PXGa8qr6pGiV+zF8V7L5mqlR3ZJVWZQAxuATEEC1xztq588Tw/KBgWqNp5QpEAjcAgR12PXGt7UdsajO/dladMkjlrIgBixjw2AHtjHpniSs3Qb7DqedjNsYeSUp8GE69BzZNKKkp4ztcg73M6o5cr7csNOAZ2sh0qVCPY2AK8xaIFwNvwvhJk3Di6ggmFAPw3N5JJmw6bYMytUgkCCQLTyPUnbYf6nGDco79k207NjkqdHO2q01FcyF0magEWL6YVhG9zHU4GpcC/hadXQ9OpVUNDKXBJ5KyEtLb2sLC/XO5birU6q6Ycq0lY+GOogW2F7euNFUy+pDUSk1JaxNSrophQJsQ4iVmfU9bwejxyc1vk2g1LkzOV4o5eWZ9QJJtGjcEwRHSxnzxqMpx6FDkFqc2qKD/VJamJIGrdkJO1gMfV+A00y1ZEpKKuoaUCstRdiTrJjSQRY+xw54PkadPLolUU4ckgo2pJgSAxuDv12JnDhBxloqKktN6DshxqQDqBU7NPSPnFuexva+HFPi6hR8R8lAaPWP0xjOIdm2RjUy7FSd4+boCD4XHr1OKivEXOstSUbBlooCR5tVBP0PXGjk1yWjZ/z4MYRCxG41AEHppPPniutxaqBq7sKv9epTH/VA+pGMonCs093zNd+ul2CnlBFORjtPsaCZZSSeZifObzuTyxGbKxHNftLpHizVBTz0srxHkmonpthfX7U0z/z6zmLd3Ta/qH0RufYY7U4HlqTBXdEO+mdRjrpChuuL6bZYXVarRzWlFhF4qSSNrjE5seIpfjkm1Gs976nVQee0PAnmI9d8fPnc03w5ekoO2rWYHkdSqOu354fZnMEGUollHzu1QD3TTYb76R9cMeDByxLCnp0yO7XTPkTJNv1wrbdDqjMChnnv3hHKVppH/cqlvqcRz3Z6saNRqteswVCb1GIAAkeHWPpGNZU4jU+WiinYapaeVtsU8Req+WzIqEXpMNKgRsNrAzc88P8AwxO6PHclVJqimSSW0ggiB/3AmOXPl1xbm+H0FJWnUJdXMqCdK+SzcncSTtPu4pcFp02asKmpgkEFh08lkdbTvgDhfZ+rXYtTQKgFmjVEz1ZdW3PriVFpfU5XBpUifZbKh69IaVTTVpkktuNQI3uSwEQLXx6k+WkReT5hvkbcCPmg+Zgc8ee8R7PV6SU61As9em4YKFAAiWDOsnaLXjxYX8d7QVVrJBNRKdJQ4ZSpZoKOSIJmGLDkLRcXcY0v2aR+kdnpGZ4VSMSiC53RbeJVFwCdmjzMeeBG7P0pOlQsGPCzLEuUmCQBAE7dQMZNe3j0KUPSdahGpb+FpKkkzsBGmBsGOJP/AIgO1Ru7ClZFyhv4tUTuYLEcpieZxeTSscpR9mkPCakEpVrJMbkOBImIIEgQDvvgmnkm0q1bNOAYIHgpzNl6knCLK9tqPdM7hdSlYVSQTAN5MwLx5yMZztBnHzdVahVQmgASbjTfxN6GYHM4H5pVyQ3H0bfP1stlaXeoztqMa0ckmGuC0xuOnPbAnC+0ivRmpWdWB+HWCZMfKEhovvOPO6ut6VRJJjxxICmNzJtywQnBKtNg2ibGWR1ZbRa8AGZtzm04zuck3Yoyb4Qx7Rcfq9+wFWpUVKgKq8MAdxFo+bp+2B+PdoBUSmq6taqCTAWSfiBK3gbed5wldq1SpT/idXdzpGrZfIIrAnYAwfywxyXD6RrqrOzIFIDKpBkD5V3jmRz9DjX8UsmTJO9ewbI5WvWuqlxMNBF+Zjr6jD3KcBzmWrpoZwCpDPS1MV/pPWZF564d5PM1xejmaThW+F0KEAiwm4BFtz12jBVHjWYX48kZjekQQTeRqB0/UjGygn7JSS9GPyOW3as3dnUFRZUlL2bUd55AX+mHS8UAfu6aKxM6juZIUMTPlTG/MH0xjaZLnwqGbrE725Dzifyxqsv2WzlKNb04Z5YzJYR0FyQL3jHE4S5s1jb4FfaDJUaj1KrVKjOxmTAWY3su214jHzcK16KdQ1GQDw92uqCdwq2J23nlgrMcCc1Svcq695dkZ+sEXYA7A3tcbb433BsqaK04yrmoAA2hpVbQPEYk2i073OFclSseFvZkM52foZakHK1o28cJfcWC3mes2wppUKWYqU6dKm9OLHu9TSxvcESAbi2049g4vladei1Kus6j8KnxAxI0nk3+uM7wuhSyzFaNA0bD7WqwYnedI3mI2GNPjd2hyhvXB59xDhVajCkKNP3zp221FyNUztcY0/DuP1qq0iQqu6kJpWVteKjSLXWCBcH3w5pcaoVdaqveuoAZnQEKSDIVio1RHt6HGfzWXNIp3Ws6qmoosAMWgMWO5A3j123G8IpWgqnaCKmSLg97obUAKgLkAEExDN8nwxe197Yd9neFRlqlKtoP27MO7aVFl06Xi/r1wtzDBSFamyTMF0KqdMbMwAJOoRE7HD/hnE0SmgYRTb4ao2LHqYAvaGuDsfOXOEnjezb45xWTWgM1Hy5Kg95TAkj5kggQRuW9B1scaWitNKQqEHYGVAm998QqodNjaRf9PLfaediNsG1D9nb2+nQYN1skWVONJutFm8zJ/wDQN0OOJxGsxACrTBEg6N7TYkwfpifdtq38PJQNPK8y1xvy54vWg5MxFoj2ItMdfwGM/sXoH4tUCu7MLBBJ8hJO1zsPy548f7ZcbzNWqVZjSpSdAViNY2l3Xdv6SIGw649J7eZsokQfEyAwCTHmBsJi+1sYDj+WDFLSAHMRMwV5e84qq2S36EPBOJZijVFSnVfvfigkkvyOrfWNuZ25Y9z7PlXRayLp72nMfdPzL6SP7tjxvsvwZsy5HwMo1xAIsRBg+v7Y9W4blM9oQd5TAgiYPXeJB2w3zYIb/wAEYMtAPMmPPedsD5ytSp03HeLdSNxF457csV1OBWLVq1RouQDEdbi+O57hFH+Hq92EDFSNZvHqd/bAlsG9HnnDctl3d6jNWCTHdGD4mIC6f6Rc8+g2xo34zQNM03zNSldZapRaiFAN4aoNJ9RjF8RdKX/GCRNj4hPpNo9sXUeKwB3dSqAJkyCkgxCwx1D1UemNX4YsxuuD0+vmajZcHK91XJA0OSNJki8gEHf3xjwubpFnzdNGXSbF0IEAEytybMIjmPqrXjdQADvC4U2gQTefhWBFumD6faZGLU3pAAllJcGoqsQALBCQLDkSJvjKXiZdplr8Xy1amKIpBi2qVVAR0kgCxJB89sKs/wACXu9dIU6gjXqovDiAPiQiCRf6eZxrc/xvLq4FNwZgkqukf5bgzsNiMVfx1XuyKCqBHhVQACQIF+WwxKhWmFXyeb5bs/WqMCoJYp9opUoym4aAdx0YG/TbBuU4Ij5WqKepa1N7M+pdamDAEeQ6XG+NHU4m6o38Q32gBOmmxa267fCxFzJje+F9LtNWKq9Ad5lyNNVHUtULfNcGAsRFz5jpoo/ojGK4ELZcUii1nVmF6nhYltV4swESAJ3t52lT4xSot3ao1SkIILsStxuoJIUzM4G4lV75mqGrDfIoUaUHzC4k8ue8nnillJA1aJvy5SfOCb9P3xk3RlLyNKlwHZrjyLUGn7NCDrBbwibrChbdTtf8YcO7Qg/ZOi2F3FhYWPTn7b88K+I5Eq1LVqpW1CZMjnHP6mMDfwlTVZy1N/ugkgWsQfhPLEz8XjmvsOPkcTT8GRFZ3JBUNTYazaFcEmBEFY1x5Y02RRVYEsVAVraxBJfVOokXg2HIGMeYVoVGInwkSlQ+E/5Rudvz2wXluM1nKRFNBMGnbaeZPtE4JLyqsKr9l+OUGvsO8kMvqWmBXG7eF5cwJAgDcwBtEDyw8orX8TUnrIqnSdZaAemsDS3LkN4vE4Z52lQI00MnTph2k1HAsukgFac6mPw7gXM4No5Y0aQio8P4QGCGRedJjUiwIgW5c8bLa2Uk17FOVr5oC7q6gz8KMBeeV97+2DavHazDSzKBIPhlTb3xNaZALAhVX4gBvOxnkBBwh43VKEmlTNSo5sJsBAG3IzeZ9hc4pQKsbZzi7KpYsAAZsQLxpEEm1rb88CcN4gK1NapEarxq3E2MxaRe4tNxiPEOEAZZHzL/AGj37oBrgDxHUeQncdRe+FPAayq5cu7UxAVV0roIE2B1qBJjmCADY4rBUHvQZx3izVnKJ9mEAMJp8QBgqWAUFidyQBvvF+5bjLKAYRa2+gldupDbW57jfCyhnFqa4mZudpm9j74s4XwdnY1BTUFolzIFhFiZJPpa/LFt0gj47rYXmeO5yuwNV0qOjeHUhVEtJjwgs0qBqEj9dzwNTmspWFVtep3gzMDSIAtb0xnOH9m1UaqjFpvqfb/pS8i218bLs4JpOqhkAcqCVAmwuB92Tz6Yzyv0VKCi6Ttf0ZHsz2lKu9Ah3SmSpkSUA8plk3EG9vrtK3G8ulNZZWnYBhfpA3P0xlMnw7uuMQJYPRctMWEg7Da8fXG1ynC6KiQiySSTAviNtB7Ew7Qu1qNFvXTH/tH5HFqJnKvxOKY6C/5afyOGmarhGCgKBsJnxE8lA5+eLMqzGZIN7Wg+4xCW6bK9GB7a5SpllpOKjuXqhDfSAsSZiJuBvO2KXpyhboG/TDT/ABVWaeWGnUxriLTHh3+k4Bogmkwjk36YuSSjojdiT/DHI93mapJktSn08Q+p88eu5EeBff8APHmnYRCMw8wPstv+of6Y9Nyfwr7/AJ4cRsWZvV3jgkEfEFuCbbG8brY/XFPFspryFamJTUpFjBEkcwTfznBecB1mad58LevoNoE35x7Sd1FEz4WbxFTuCYt7RGJjqQ3weYVAaYCvTYgCJaDPuLYU8TqK7aG7vu2gaQCG5fMv5Wx6g+Vp7wB5iLjoeo8sZjinZfLVj3qgB+dSnYE9HQG28cjjVSfsnFGcz9RaSWaNNuUn364E/j6pKwJSL6i0jeLWHT2ww4pwUyFqopUkBWEaZ5XNl94wSnBzSA1ggQCsQRHLbl6YtBLFLgDpDvDI8MDa5/BjP44t1vSWzt18MEe67j1xPifDWrKClVqZE7AEH33/AL2wKKVWig1tqINmHMcp6+2KVMxbH3DOJAsocggiDaI/H98Sr1Ka0vtKiUqrVO7p6qg7siCyknZbA/EdxHMYx/EOK06ZGsNqa+oAQPW8YuzmXGaprr8Y+R0tfodUCeUEYmXjQ1Kx5nezubI/4dOqk+EoymRBM+x+sYUUuE1Gqkd1VBF9OkBgJN9Ja4JDXH64H4TxTiHCr0yKuXmWpsNSj2B1UzHNTHXG04Rx0cSaqWUUX0AKQ5YaQZu0CTJMenrjnn4GllHaFjF6M3x7iTNSp0sxSaBdO8psrfDGqTvY35RhVnMjSb/4qw8iQXlSQIJUFdQmJ3i+wx6dxLhlYU6qFO+UmQDFjpAtaLDrhLwrsxlqxnuatCppPhYkFWBX1BFzcSNsY7HLxN8GK4j2YzlXLpVFEmSbNZgAekDAWT00wofpBplQRIHMbEj9Meq8SrrSp9zXTXTOpQQRKEWItEbgg+YnHnHaLggWs5yxFSmYIGtdQnkZiSIOx2jDj9liZz8dLRqslmar0y9SkKdQzpGrUfIm4v5Ty3wNwXPrSDCrme8c1Cq+ILDCABOlp5SBYFoBtODKmckzFvMgfQAYS5h6NU20/ZkDSpgAgk3UHmeom2OqJ0ODHa0tKBXqMwgahqaHi4LJMNcAjVMYXZ1KxqLDGminxLAEx8QbnOwiBF/KZZjOMaaqFadWosWMEREBIEG/XltfFXGM4DSpqisCoMksWkm5KqRCn6ySJsuNFRLgwKjTc1WqMdNEgISAwMmSoJI1CIbymY2nEMxnV70UaaF9TQxltV7mLXPvzAwZwRu6RjWDtmANVIaEIlpgFiLDa4E9Nxh9wvh3dLqfxVW+Njy8h++E5oahRRwngCqbjUxMhdwCeZ+8fwxqcpkgLt4jytYf3/YxdkMqEWSBqO+1vIfrgweuMHKzVIqqEmCfr/ti/g7QGBPzmLRyFvM4GquYOGfD6K6AAQ0mdrewwR5EzP52jHFcu170ag8rf7jGrobYUZvLzmqTE3VWgRvIIP6Yb5fb3xUXySxdmKLu5gAXjUeQG4W25Ejy95wRkqWkiIgiwH7fTFVanDTTF9RkH5iQRvBIvedrEc8Ty4KeJ4vaFBPn+ZOM0tlPgzv+JHDXr06K07MKmqelvr9MC9mVahQ0VDrqFYM7gbQb39Th72jJZEMsvj2t4hAsR/ZwpGWjxaT4YAOmPCRuI+X3tY+hNghH2R4aaPEMwYhGpApuYGoWk7m2PR6LMEXTHPebX6DfCbhtYUxECDeev74dUczTCi45n6nFRehMrFOoWILLBggwZ22iY9zjlbI6qNRDfUIOqL+0R+GJ/wAwS59h54W5vOlpEeGd728vT64LQbFoSpT+FRAFwW8Nuk3QR5n9cTfL0u8VhpWo0gQY1xcyBZvQzi+rRDKVMEERBuCDuDfpixKSiPCBG1tp3jphgAZ7JgWiVNipv/YxmuLZapSClKjmmtgCZ7vyE/L0+nrt2W078sKsxSAlTcbGeYw06A8/4jRrZhVFOqAVaTBANgd46b7YLXOQCtRQ4Jvc/kf0wGKzUM69AAeMDQZI1EbSQOYN/YYNzBJhtGjUJ0zMGYYA8xqBg9MXkLFMe9iOBZTOCutWmGClAJtGoMSARvtzwiFVKFN9QARdVgDsL7dcfcB4tWybVStQ0w9RWjuu8VwFC3galMzsRviJoOw+0Q+LYxZgR54pr2YxkpScaarta/h+w5NSqGem9PUJUODJECCv3hfEqVNRJCIZsRAMjoV2I9cDii50gmyqFAY7KNh1gTzxNssWMsx1Hn18p/XEtWXVezU8K7QhBpZSu20QIAEActsH1ePUzchp9MYN0Vd2IEgMW2Xlfyw54rw58qUNKutamwkIFExzjxR6XEz9FiLJhpztI+GqveTJB06dyDcayCd7iLYwnH1ylNqhp/xCMCBIUEbzC6nuIJubeExth1xiglcrURalNgniDBgsgrIBPnzAI9d8Qq8UWnRR6uoFrAgbxzvty3jfEJqLolzfsCzmSrVEIECRAIcHTeT4SCDYc4/LGffI1CAlLUib1HuDIJgXUS3OxKid5nHpOa0U8oFVqJqORICy4BPMzCAKDaN4wir5YPpVqbVFLhQqoHkmYkNaAJMmwjY7Y3RTlfJn6FTXUdgHlCaV4FwZYkzczboNO03LjJ5RqrpTWJJ+Zo2Exq5bYso06VFdFP4FkLPONzaxnrzwv4jQFRCwqUwbAU58ZaQZ0gHwxO8C2+CuylN1VDzKZTVm6lUAKKelDpYvqcLEazGtV6wLgRtfQZGnLieXi+n+sYWcIoxRXlqJMD1j8lGHHBPEdYupSxOxuCI88YyZokMMtmFckgm3Igg+sMJjzxbUYYWZPgyUqz1lZhrJlREXuZ5m8nlg4viHXoautg7d4DEalb1kEmd+SgfpizK5t6T6Y8JEgyN5jbla/viFaqY8PxeuKlpPJLXkdeck26CCB7Yl6HyG5fMNVrAExpk2BsYtfYi/K3vhxRd4+EAzuTb2A/0ws4Q4Vo+9sT1G4w8QCL4uFUQ+QALUkiEFz4r3nnpH74upUTK+InrPpyAti+FjVNsCZniSKIHP+98PSDk7xXLgrvdbgT+GM7RzBLMqSuneRsSLep9Db3wZXrk828+n+n0GIAHrjNuykqKFydiupvK9hznSLE9CfL3IrLCkgSfzPKcfEtqAgaYMnnMjT+Gr8MXTGAZVSWwJiecY6ze/5Ykwx9q5YKExXneKmm4SlReox3AHg92NgR/vg3hteoynvQgcHZCbA7SDzjpOO0KGl3bUYYC1oWJ29dRJ9MTWioMixJknebgmZnpHkNotjRPVEVuz7LZtKjOqGQkAn+q8iOoj8RgXNqJ23/cj9MF1pBlQPFaOp5GeX99MB1aqtMcrX3/vn74aGYX/ABCyFqVZRdTuOgN/wIPtjc9taVI5DUmhXbSA+kAzpMSY/PGT7f8AEUpU6aESSDYGN/PyjGdodxURWUBGNy2kAm/Mjz6nGkFoiXIfwnvRSioZcCzGCJvbw7i0z/V5Y2HY/NfzHIGi50vTAplBspT4CBMj64yFLUswTHmf9MRydSpl3qtRgFypYG0ETO6neR5yOe2Jm9aJcWHV1ILAqAwMHlBG+A+L8RaimvSWggRMASYuSNsH1GFSqWt9oJjeDtufUcuWOPltQhhvYyLYtcEb9kMtVLrJOluYlT/5LIPK/njtGgBsYkyYEA9bDngalRFMQoAAOwH5YKJB9TfDewCDxmtQVgxOmCJUTbYETzG8c8GcYzuXzmXFNnWmoAda+mSGB0kBQQZILAjlOMfxbjNWg0NSDUjZWBNjzk7A+UX64hl+7ZSGos9EnxIPlYWPxAw0gAgW/DEOOh2OOGZ561EOwCySBe0AxI9sMaPGqtKk9OkzQ86oAkyIsx2t6YR5LOFkgU1DJ4Sob4eYE+kel8fNm7aGZTUMjTTnwxEFuYnVvEWOKd8GsYx5K6+dKkKaUJIBYkALOwvudtsMsvku8qKqMhYoXt8okxIIFzFh/vhXmMmCL6ZO5gltojUTAB62PntEuFZ45fMLVRbzJLCdXIiByiRhOmtFLJXZ6H2eoqKYU6WKze1wSTtJAIMg+YOL6SFKxUSF0zeIAmVCgchqYewwv4bxCoynN5mvRTWBTRDubkLpUeer6HYDFtRm1S12AgW2B6eW2MpRGmMte0D3PMeXXAq5xTFyA21omBN4mPc8jhrwDhwqUyXYxJ0jmp2JB8+mBeM8JakigN81m5czBTr7xhY1smUn6IK4AgbeWJXxUkAfri1aqnElHIi8+sdeRHn/AHyxa9d3EsYA6/kY9D1xENziMcAnBQyvvWnTDQAIJIIG9hN5iOWL1ozf88cJA2ucDaagLxefEt4ExBU3PQRA64kZbna4pqzATAsOp5CeVzivK51aqyhkGRPpbCoUq9UlixpwICxba4K6oYEGOWx8sEjUtQOmjRU8TCYMwAulfui20R9cP0T9sv1/saKeTHeSPbf2/fHQ399MA1svULCWBS6kXBIIg7egPudsdyGRFHVDM07aiTFgLSY+XoNzgKDpx8xnEAY6HFNWqQyKBIaZbpAkD1P6YaEXHpimtmVSA7AajCjqb2/A/TE2dgpJGogEwvPyE8z+uAMrxDWZNJwwYoDpupMewMyJn5fPFCoMzNTTI+bb/LyI/wAx/AW5nAqjmdgJJ6DniFGm2mWggswBUyDBI5c7X88I+0fGFUCkpOlrM4EifP8Ap/PFIRn+1eXTNuXDHUtgLGF2B077CZwL/BwsIdII2O3lfpjQ18sz0UbuwgE6qisx1aoAsSdCkTAv8bREnH2UoNTpVKxOkyKeXA+aq0Ks8tI1XBsZ5gHF3jwSqlpkuN9mMxTy5d0tpElDMHpbYzbpOFnE81RLL3DFYWGDq4g7ADWTygQCRa2NZx/iTLlFpF0cVbUyFYHwtLOwnTYgwbdfLGJzFB4DNcfeJED1w4NtbFOr0F06LMFbwxyIN/8At3xHjT1tDd0bmPbqR5jAy5RNSaqfeAkFPGwKMCTKgSD5gi8bjBjUXDEMHPnf9sN16BfsE4X3hpg1SSxmCRBjzHXfDATEhvbf1xBRbc47pHW/pgT7JlDorrVbQ4BQi4ImfbFFfLKVHcShFvDIkfngx6SkaZkeYxVTpFDKEel4wMnYp4Kx1NSanpUKGANuZGwsATJgAXk3JnDZD42AUALFwRfpYcvXE6fBDRrVQVCEtESW0i+kFjJYwfiO+CUyQE3id7bn9cKW3o1jJRirZDK5RqtRaagFnMAHb9uWCe0nZavlVRwUbUTqN4Xqu1wRN8DcP4gaFfV3ZIViEgyWAVdZYfKQKgi+PQO0VV6uULvUSnSKBlFiajfLcnmdgBz9sCQSnfBhez/GcxlQyoitaV1idB+8vre2KMv2zprValWLN4jqqAfAxPikD5ZPLbDDhOZyZp5pK5qh6SA6lGyuIBX+oHra2MjleGiqWagNYqjTp8cMYgMApDagfY+c3Tr2CtptVZ6ZRquqs1N9dOoIK6mA2iUdb02vuOgtiH8cj1HcrmKlfSEHegCmizfSRIJjePiPT5ctmM/V4YqpXDAnZGvqA6SdgIG9rYc8O7QUMwFI8BPXYevMe+I2kNpNjdShkmQbW+Xz5FhPvfBazEgSAN1IP4b7mNvwwtJEkSDAmxmx229McVoMgkdIxOK9FDAVxbl6852+vLriZbqcCDO1JkmeXiAPlub7YkM2OdNR5qSD+Zt+564nFjsKXEp64GGbS/gYdPFt9RJ9zjpzCR8//j7W5YKYWdy1HQGEsZZm8V41GSBbaSfriaMrbAggkXEXFrdR54g2aTo/uR7Xi+PhmweTExElrxAAFgNuovh0xWdzubSkpd2gD8TyCjmT0GLg4NgJ/U+WAhXtGlOYuJt6GRiRzTm2ogdBYfQYeLC0G1DAIaF/zGDPkLkx/c4FNaBbxMQdIgwxAmPK/WMDhJ2GIvmkpEMzoGG2xPnAF8DQFzDMMhdAAWpnSjCCrj4ZkEQZv0gbjBhFOiCzEKTGptixAiT54TcS7ViIpr7t18hjKcQ4o9RpYkn8B+g3w0gHXHu1P/LQFUIjVAv7fKDjOspYGelhiWnrcn+9sdKkAco6ftiwNHxjOZZqSjKhEdyFqFabUyEWNOsNu/hA1AkWPXGeo8YzOVqNTplKtF21d1WUQZ3CNYg25zEbHB3AMuMzXSgZBaTI6AEknpYYL7T8JFCp3LurCNQkfmP2w9mbSXB9xHMd+dRQU/AERN+7EQQD5m+wtGEa5HSrJU8SEyIJmece3LBr1dNkNrATJkmw8yMG8Xy9NG0TIKBtc2MzzBibA2iJG84uK0ZSYgcjVpTSRE6djbp+dpwdw2tVNybRcNv5QenrgPJ06bOyspYASJsfLoZidsFU6aopCrABPpfr/fPAxJl1OqFZEYt4jyGqeZgbkxJgXgGL4OzARHqKH1aYuyMobyRmADkdFn8DCqtDqAwtM9Rbb0jrgnJ0O8Y6VLk8zLH3YmR7nE/wVZPP5unSpNUaIA6CSeQA67DGdq9qqUeOjpE8iur/ALeVxzw446ClGqGUHSLqw3tz8sZjs5w6k7halMMpBZSZtEAje6ybdL4uuXQrNxm85RdwMuz1VVYNd7iqxJaVJJJAkCT+hwNXdhTZoGoAwOpAt64RcSqFQIJHxbGOWHOZYilIJnSb4X7ARcJNeo7ZhAXkaXS3g66jEr1Cm9z0wbWrO4SSwnxKpYmBcyqkwq33tvjPVK7LWpqrMFqGn3gBID2+YfNud+uNZ2oqEs5JJOoiSeWpzHpJJw/y30NKifFOCUdAqtWpFlbRpaIcxcaTtZgQT1UyJGHP+HNenQzFRSFDEeERcGfF6TEe3ni7sdRV6FBnUMYYywBNidNz0gR0jGU7Xf8AHzflWpR5WqTHTYfTEtWrRcXVpnqHbjNZSpQNGsneu50oqiWRiBDBvljUD5zEHHkFLg1WhXdqx+0WUZtVjc/LA0jbcnYm029e7DDXRWo3ifuaZ1G7TDydRvPnjyTtC5fNVAxLA1bg3B+1YXB3sIw0stIlOvsydDPGjU70VPs2YIe7IBJ5wSQNUbidhhvkuK/xFQd1mUpvrkpVJGtYuBqGkERyYzvO4Kn/ABEyVOlWRaVNKayp0ooUTpHIDA2fP2TehP8A6/ucOK3XYSdpy6NyvGKYZkqAypKkoQRI3iYty9sXDiND/wCwjyKm2PH+G5qpoUa25fMeonGxqn7E+354xlGjSM7Nomcon4a6HE++pj/mp9ced5Rjq9sMFNj6Yl2jVI2vf0//ALqf1/YYrbiNEf8ANn0BxksuccU2bCthijX5XNJVFXuwxKISpYEKW+VSVDETI5fWMSyDV3pVGNJUKJqDstTSWvqULUVGtAvF5xhHzdSmW7uo6TonSxE/HvHoPoMA8VzdRq6hndgLgFiQDIvB54tcbM3zo0ub4tUc3driIXwj6DFTKT8Kx/d8V0FGpbfMMFZk7f31xKSH5G09C4rBhvp/oMfO8C422tf6YZ5hQKZsOWE63b2GLCMrRYK6wIEz/e/PBZpx5np0wLR39v2xdkvhc9JjywFF2X4q+UrpmQusgFCsxZokzHxeH3k4H7R5p85mBmIKqQAAYkAdSJ3k+5xfWFhirNnfAmTKJYlMNpUuQwupBgyNtJHMfj9cS4jnKjECrULkeHUQPYHSBz3wnU/bKOUTHvgymgJuAd9/acWZNIqWqUqMbkevrg0MHVmUeh+lsU1PiqDlItyvvbEeGbMOVsVyZvRaSI8ov1GKeHcYq5SvJeaTNcFWKMPPT4kqC8MAQ2x5YnxT4CcUD9f1OFwCD69Zswz963eyNBkaVCztTQGy23JJubnCirnKeTOhWqVCB4KZIIpgwTDRN9I3k2GHVI2HquMn20s1JhYnUCRuQNhPTA+djhvR/9k="
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,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"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b class="text d-flex justify-content-center">The Latin Quarter: Intellectual and Cultural Hub</b><br>
+            For a taste of Paris’s intellectual history, the Latin Quarter is the place to be. Home to the Sorbonne
+            University, this area has long been associated with students, writers, and thinkers. The quarter is filled
+            with narrow streets, bustling bookstores, and lively cafes, offering a more relaxed and intellectual
+            atmosphere. The Jardin du Luxembourg, a beautiful garden in the heart of the Latin Quarter, provides a
+            peaceful escape from the busy city streets, where visitors can stroll among statues, fountains, and flower
+            beds. <br><br>
+
+        <div class="in-images">
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://myprivateparis.com/wp-content/uploads/2020/07/3-2.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/73/80.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card m-2" style="width: 18rem;">
+                <img src="https://www.aparisguide.com/latin-quarter/place-st-michel.jpg"
+                    class="card-img-top" alt="Card image" style="height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        </p>
+        <p id="visit">
+            <b>Conclusion</b><br>
+            Paris is a city of endless beauty and cultural richness. From the towering elegance of the Eiffel Tower to
+            the charming streets of Montmartre, it offers an incredible array of experiences for travelers. Whether
+            you're a lover of art, history, food, or simply the magic of walking along the Seine, Paris has something to
+            offer everyone. Each visit reveals a new layer of its charm, leaving visitors eager to return again and
+            again.
+        </p>
+    </div>
+    <div class="container gal">
+        <div class="container-fluid">
+            <div class="gal-name text-center" style="font-size: 50px;">Gallery</div>
+            <div class="row image-to-animate">
+                <div class="card m-2 " style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/2119799972/photo/spring-evening-view-of-the-eiffel-tower-in-paris.jpg?s=612x612&w=0&k=20&c=eToYv7xbRNVqLhyKfHoF2oQLb2YFd-RDxoOgt6zoTZo="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain">
+                </div>
+                <div class="card m-2 " style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/1492037769/photo/eiffel-tower-aerial-view-paris.webp?a=1&b=1&s=612x612&w=0&k=20&c=IyjRR5ugLHmEMT2lRLCy1TU-u5qyC8AJabW11Q12l-A="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain">
+                </div>
+                <div class="card m-2 " style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/1407704173/photo/arc-de-triomphe-paris.jpg?s=612x612&w=0&k=20&c=wSOMPOZFas0lsreQ7hCVICPKtFJbvpJvJi104A3YRy8="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain">
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/848587782/photo/happy-seniors-in-paris-having-a-wonderful-vacation.jpg?s=612x612&w=0&k=20&c=6-LdziGz_kgt_ZzJSag5-8AXTU3xu9nigLhXRIkItkQ="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/1426044908/photo/crowded-basilica-of-sacred-heart-paris.jpg?s=612x612&w=0&k=20&c=fhCDL34diK3Zay9IVYKUlsHiqEQW9zK_NzMV4uuLooU="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/1055603078/photo/woman-with-bicycle-in-paris-france.jpg?s=612x612&w=0&k=20&c=fri2qnWn5cRSFtB0hWZAym4_FyOQ9w-VkruYNyp6L-c="
+                        class="card-img-top" alt="Card image" style="height: 200px; object-fit: contain;">
+                </div>
+            </div>
+            <!--<div class="row my-3 image-to-animate1">
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </dcover     <div class="card m-2" style="width: 18rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </dcover     <div class="card m-2" style="width: 18rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </dcover     <div class="card m-2" style="width: 18rem;">
+                    <img src="image.jpg" class="card-img-top" alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </dcover     <div class="card m-2" style="width: 18rem;">
+                    <img src="image.jpg" class="card-img-top " alt="Card image"
+                        style="height: 200px; object-fit: contain;">
+                </dcover </div>
+        </div>-->
+        </div>
+        <div class="container">
+            <div class="route">
+                <div class="text-center" style="font-size: 30px;">Route Map</div>
+                <div class="route-steps">
+                    <div style="font-size: 18px;">
+                        <b>Step 1: Departing from Hyderabad</b><br>
+                        Rajiv Gandhi International Airport (HYD), Hyderabad, India
+
+                        Arrival at the airport:
+
+                        Arrive at Rajiv Gandhi International Airport at least 3 hours before your flight for
+                        international travel.
+                        Head to the International Terminal.
+                        Complete the check-in process, passport control, and security checks.
+                        Flight to Paris:
+
+                        Most common routes are with one-stop layovers. Direct flights are rare, so you'll typically have
+                        a layover in major hubs like Dubai, Abu Dhabi, Doha, or Mumbai.
+                        Airlines like Emirates, Qatar Airways, Etihad Airways, Air India, and Lufthansa operate flights
+                        from Hyderabad to Paris.
+                        Sample Itinerary:
+                        Flight Option 1 (One-stop via Dubai):
+
+                        Depart from Hyderabad: Emirates Flight EK525.
+                        Layover in Dubai International Airport (DXB).
+                        Board connecting flight Emirates Flight EK73 to Paris.
+                        Flight Option 2 (One-stop via Doha):
+
+                        Depart from Hyderabad: Qatar Airways Flight QR501.
+                        Layover in Hamad International Airport (DOH) in Doha.
+                        Board connecting flight Qatar Airways Flight QR39 to Paris.
+                        Flight Option 3 (One-stop via Abu Dhabi):
+
+                        Depart from Hyderabad: Etihad Airways Flight EY275.
+                        Layover in Abu Dhabi International Airport (AUH).
+                        Board connecting flight Etihad Airways Flight EY37 to Paris.
+                        <b>Step 2: Layover at Transit Hub (if applicable)</b><br>
+                        Transit process:
+
+                        On arrival at your layover airport (Dubai, Doha, Abu Dhabi, etc.), follow signs for
+                        International Transfers.
+                        Recheck your gate for the connecting flight.
+                        Depending on the layover time (usually 2-5 hours), you can explore the transit terminal or relax
+                        in the lounge.
+                        No need to collect baggage; it will be automatically transferred to the connecting flight.
+                        Board the connecting flight to Paris after completing any necessary security rechecks.
+
+                        <b>Step 3: Arriving in Paris</b><br>
+                        Charles de Gaulle International Airport (CDG), Paris, France
+
+                        Arrival at CDG:
+
+                        After landing in Paris, deplane and proceed to Passport Control (Immigration) for non-EU
+                        travelers.
+                        Present your passport, visa (if applicable), and any required travel documents.
+                        After clearing immigration, head to Baggage Claim to collect your luggage.
+                        Pass through Customs. If you have nothing to declare, you can use the green channel.
+                        Navigating Charles de Gaulle Airport:
+
+                        Charles de Gaulle (CDG) is a large airport with multiple terminals. Flights from the Middle East
+                        (Dubai, Doha, Abu Dhabi) generally arrive at Terminal 2.
+                        Follow the signs for Exit / Sortie to leave the airport.
+                        <b>Step 4: Traveling from Charles de Gaulle Airport to Paris City Center</b><br>
+                        You have several options for traveling from Charles de Gaulle Airport (CDG) to Paris city
+                        center.
+
+                        By Train (RER B) - Fast and Convenient:
+
+                        Follow signs for the RER B Train (blue line) from Terminal 2.
+                        Buy a ticket to Gare du Nord or any other central Paris station.
+                        Trains depart every 10-15 minutes and take about 35-40 minutes to reach central Paris.
+                        Ticket cost: Approx. €10-€12.
+                        By Taxi - More Comfortable but Expensive:
+
+                        Taxis are available outside the terminal.
+                        The ride to Paris city center takes about 45 minutes to 1 hour, depending on traffic.
+                        Flat fare to central Paris: Around €50-€55.
+                        By Airport Shuttle / Bus:
+
+                        Le Bus Direct or RoissyBus are shuttle buses that operate between the airport and central Paris.
+                        Buses take 50-70 minutes and cost about €12-€18.
+                        Car Rentals:
+
+                        Several car rental agencies are available at CDG Airport.
+                        If you prefer to drive, make sure you have an international driving permit.
+                        <b>Step 5: Arrival in Paris</b><br>
+                        Check into your accommodation:
+
+                        Depending on where you're staying, you can take public transport, a taxi, or walk from the
+                        nearest station to your hotel or Airbnb.
+                        Enjoy Paris!
+
+                        Now that you've arrived, you can explore the city’s famous landmarks such as the Eiffel Tower,
+                        Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées.
+                    </div>
+                    <iframe style="border-radius: 5%;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.77824450853!2d2.264633798119612!3d48.85893843534506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sin!4v1729451584573!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="mx-5"></iframe>
+                </div>
+            </div>
+        </div>
+        <button id="scrollToTopBtn" class="btn btn-primary">&#8593;</button>
+        <script>
+            function home() {
+                window.location.href = 'TravelBlog.html'
+            }
+            const image = document.querySelector('.image-to-animate');
+
+            const observerOptions = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+            observer.observe(image);
+            const image1 = document.querySelector('.image-to-animate1');
+
+            const observerOptions1 = {
+                threshold: 0.5 // Trigger when 50% of the image is in view
+            };
+
+            const observer1 = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions1);
+            observer1.observe(image1);
+
+        </script>
+        <script>
+            document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scrolling effect
+                });
+            });
+        </script>
+</body>
+
+</html>

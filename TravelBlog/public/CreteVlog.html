@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+         body {
+            background: #67B26F;
+            background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+            background: linear-gradient(to right, #4ca2cd, #67B26F);
+            font-family: 'Lato', sans-serif;
+            color: #000;
+        }
+        .drop-area {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .drop-area:hover {
+            background-color: #f0f0f0;
+        }
+
+        .image-display {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #targetImage {
+            display: none;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            
+        }
+
+        #reuploadBtn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 10px;
+            resize: none;
+        }
+        .btn{
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <div class="container d-flex justify-content-center align-items-center my-5 ">
+        <div class="container mt-5 w-50">
+            <h2><strong>New Blog/Vlog<i class="fa-solid fa-arrow-right-to-bracket mx-2"></i></strong></h2>
+            <p id="res" class="mt-3"></p>
+            <form class="row g-1 col-md-12 form-floating" id="loginForm">
+                <div class="drop-area" id="drop-area">
+                    <h1>Cover Snap</h1>
+                    <p>Drag & Drop an image here or click to upload</p>
+                    <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+                </div>
+                <div class="image-display">
+                    <img id="targetImage" src="#" alt="Target Image" style="display: none;">
+                    <button id="reuploadBtn" style="display: none;" class="btn btn-primary">Re-upload Image</button>
+                </div>
+                <div class="col-md-12 form-floating">
+                    <input type="text" class="form-control" id="floatingName" placeholder="JaiChey" required>
+                    <label for="floatingName"><i class="fa-solid fa-signature mx-2"><b></i>Blog/Vlog Name
+                        &#42;</b></label>
+                </div>
+                <div class="col-md-12 form-floating">
+                    <input type="text" class="form-control" id="floatingUserName" placeholder="Jai2308_" required>
+                    <label for="floatingUserName"><i class="fa-solid fa-user mx-2"><b></i>Place &#42;</b></label>
+                </div>
+                <div class="col-md-12 form-floating">
+                    <input type="date" class="form-control" id="DOB" placeholder="23-02-2004" required>
+                    <label for="floatingContact"><i class="fa-solid fa-cake-candles mx-2"><b></i>Uploaded Date
+                        &#42;</b></label>
+                </div>
+                <textarea name="about" id="about" placeholder="About Blog/Vlog" class=" p-2 m-2 col-md-10"
+                    required></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center"><button class="btn btn-primary">Save</button></div>
+    <script>
+        const dropArea = document.getElementById("drop-area");
+        const fileElem = document.getElementById("fileElem");
+        const targetImage = document.getElementById("targetImage"); // Target image tag
+        const reuploadBtn = document.getElementById("reuploadBtn"); // Re-upload button
+
+        let isFileDropped = false; // Flag to avoid double trigger
+
+        // Check if there's an image saved in localStorage and load it on page load
+        window.onload = () => {
+            const savedImage = localStorage.getItem('uploadedImage');
+            if (savedImage) {
+                targetImage.src = savedImage;
+                targetImage.style.display = 'block';  // Show the saved image
+                reuploadBtn.style.display = 'block';  // Show the Re-upload button
+                document.getElementById('drop-area').style.display = 'none';  // Hide the drop area
+            }
+        };
+
+        // Prevent default behaviors on drag events
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drop area on drag over
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.add('highlight'), false);
+        });
+
+        // Remove highlight on drag leave or drop
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.remove('highlight'), false);
+        });
+
+        // Handle dropped files
+        dropArea.addEventListener('drop', (e) => {
+            isFileDropped = true;  // Mark that the file was dropped
+            handleDrop(e);
+        });
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);  // Convert the image to base64
+                    reader.onloadend = () => {
+                        const base64String = reader.result;
+
+                        targetImage.src = base64String;  // Set uploaded image to target image tag
+                        targetImage.style.display = 'block';  // Display the image
+                        reuploadBtn.style.display = 'block'; // Show the Re-upload button
+                        document.getElementById('drop-area').style.display = 'none'; // Hide drop area
+
+                        // Save the image in localStorage
+                        localStorage.setItem('uploadedImage', base64String); // Store image as base64 string
+                        console.log(localStorage.getItem('uploadedImage'));
+                        isFileDropped = false; // Reset flag after successful upload
+                    };
+                }
+            }
+        }
+
+        // Disable drag-and-drop functionality by removing event listeners
+        function disableDragAndDrop() {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.removeEventListener(eventName, preventDefaults, false);
+            });
+
+            dropArea.removeEventListener('drop', handleDrop, false);
+            dropArea.style.cursor = 'not-allowed';  // Change cursor to indicate disabled state
+            dropArea.querySelector('p').textContent = 'Image Uploaded';
+            document.getElementById('drop-area').style.display = 'none'; // Hide the drop area
+        }
+
+        // Re-enable drag-and-drop functionality for re-upload
+        function enableDragAndDrop() {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            dropArea.addEventListener('drop', handleDrop, false);
+            dropArea.style.cursor = 'pointer';  // Reset cursor
+            dropArea.querySelector('p').textContent = 'Drag & Drop an image here or click to upload';
+            targetImage.style.display = 'none';  // Hide the previous image
+            reuploadBtn.style.display = 'none';  // Hide the Re-upload button
+            document.getElementById('drop-area').style.display = 'block'; // Show the drop area again
+        }
+
+        // Trigger file selection dialog on click, only if not triggered by drag-and-drop
+        dropArea.addEventListener('click', () => {
+            if (!isFileDropped) {
+                fileElem.click();
+            }
+        });
+
+        // Handle Re-upload button click
+        reuploadBtn.addEventListener('click', () => {
+            fileElem.value = ''; // Clear the previous file input value to ensure re-upload works
+            enableDragAndDrop(); // Re-enable drag-and-drop and allow new upload
+            fileElem.click();    // Open the file selection dialog for re-upload
+        });
+
+        fileElem.addEventListener('change', () => {
+            if (fileElem.files.length > 0) {
+                handleFiles(fileElem.files); // Handle file if selected via the input
+            }
+        });
+
+    </script>
+</body>
+
+</html>
